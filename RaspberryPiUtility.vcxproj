@@ -128,6 +128,7 @@
     <QtRcc Include="raspberrypiutility.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="backendwrapper.h" />
     <ClInclude Include="control_in.h" />
     <ClInclude Include="control_out.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />

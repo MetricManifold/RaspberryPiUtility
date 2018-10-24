@@ -1,8 +1,10 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_raspberrypiutility.h"
 
+
+#include "ui_raspberrypiutility.h"
+#include "backendwrapper.h"
 #include "control_out.h"
 
 class RaspberryPiUtility : public QMainWindow
@@ -13,16 +15,13 @@ private:
 	Ui::RaspberryPiUtilityClass ui;
 
 public:
-	RaspberryPiUtility(QWidget *parent = Q_NULLPTR);
+	RaspberryPiUtility(QWidget *parent = Q_NULLPTR, Backend const &);
 
 
 	/*
 	 * the update functions, overloaded by output state
 	 */
 	void update(ControlOut out);
-
-
-
 
 
 

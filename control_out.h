@@ -12,3 +12,4 @@ public:
 		pitch_value{ pitch_value }
 	{ }
 };
+

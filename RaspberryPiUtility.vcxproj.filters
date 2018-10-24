@@ -74,5 +74,8 @@
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="backendwrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

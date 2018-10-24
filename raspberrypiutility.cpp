@@ -1,9 +1,13 @@
 #include "raspberrypiutility.h"
 
-RaspberryPiUtility::RaspberryPiUtility(QWidget *parent)
+RaspberryPiUtility::RaspberryPiUtility(QWidget *parent, Backend const &b)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+
+	/*
+	 * create our algorithm objects
+	 */
 }
 
 void RaspberryPiUtility::update(ControlOut out)

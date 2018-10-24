@@ -261,5 +261,3 @@ __pycache__/
 *.pyc
 
 GeneratedFiles/
-*.vcxproj
-*.vcxproj.filters
