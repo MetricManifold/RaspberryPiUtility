@@ -1,6 +1,6 @@
 #include "raspberrypiutility.h"
 
-RaspberryPiUtility::RaspberryPiUtility(QWidget *parent, Backend const &b)
+RaspberryPiUtility::RaspberryPiUtility(Backend const &b, QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);

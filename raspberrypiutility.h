@@ -15,7 +15,7 @@ private:
 	Ui::RaspberryPiUtilityClass ui;
 
 public:
-	RaspberryPiUtility(QWidget *parent = Q_NULLPTR, Backend const &);
+	RaspberryPiUtility(Backend const &, QWidget *parent = Q_NULLPTR);
 
 
 	/*
