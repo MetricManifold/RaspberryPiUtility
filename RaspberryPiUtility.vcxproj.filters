@@ -28,6 +28,12 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Files\Control Bridge">
+      <UniqueIdentifier>{34bce466-831d-4d76-86ab-b66b7ae127d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control Bridge">
+      <UniqueIdentifier>{bb1ffa76-8ce7-4998-a2cd-1d724ed299a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="raspberrypiutility.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="control_in.cpp">
+      <Filter>Source Files\Control Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="control_out.cpp">
+      <Filter>Source Files\Control Bridge</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,5 +63,16 @@
     <QtRcc Include="raspberrypiutility.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="control_in.h">
+      <Filter>Header Files\Control Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="control_out.h">
+      <Filter>Header Files\Control Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
