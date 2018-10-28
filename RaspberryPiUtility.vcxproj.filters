@@ -48,6 +48,9 @@
     <ClCompile Include="control_out.cpp">
       <Filter>Source Files\Control Bridge</Filter>
     </ClCompile>
+    <ClCompile Include="backendwrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="raspberrypiutility.h">
@@ -75,6 +78,12 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="backendwrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bridgein.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bridgeout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,15 +1,21 @@
 #pragma once
 
+#include "bridgeout.h"
 
-class ControlOut
+class ControlOut : BridgeOut<double, double>
 {
 public:
-	double const yaw_value;
-	double const pitch_value;
 
-	ControlOut(double yaw_value, double pitch_value) :
-		yaw_value{ yaw_value },
-		pitch_value{ pitch_value }
+	ControlOut(double yaw_value, double pitch_value)
+		: BridgeOut(yaw_value, pitch_value)
 	{ }
+
+	void update(RaspberryPiUtility * const w)
+	{
+		auto[yaw, pitch] = vs;
+
+		w->set_yaw_output(yaw);
+		w->set_pitch_output(pitch);
+	}
 };
 

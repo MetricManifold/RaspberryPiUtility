@@ -1,6 +1,8 @@
 #include "raspberrypiutility.h"
 
-RaspberryPiUtility::RaspberryPiUtility(Backend const &b, QWidget *parent)
+#include "control_in.h"
+
+RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
@@ -8,22 +10,26 @@ RaspberryPiUtility::RaspberryPiUtility(Backend const &b, QWidget *parent)
 	/*
 	 * create our algorithm objects
 	 */
+	connect(ui.btn_control, &QPushButton::clicked, this, [&]() { ControlIn(b, this).slot(); });
 }
 
-void RaspberryPiUtility::update(ControlOut out)
+
+double RaspberryPiUtility::get_yaw_input() const
 {
-	ui.pitch_dis->display(out.pitch_value);
-	ui.yaw_dis->display(out.yaw_value);
+	return ui.yaw_input->value();
 }
 
-
-QDoubleSpinBox const *RaspberryPiUtility::get_yaw_input()
+double RaspberryPiUtility::get_pitch_input() const
 {
-	return ui.yaw_input;
+	return ui.pitch_input->value();
 }
 
-QDoubleSpinBox const *RaspberryPiUtility::get_pitch_input()
+void RaspberryPiUtility::set_yaw_output(double v)
 {
-	return ui.pitch_input;
+	ui.yaw_dis->display(v);
 }
 
+void RaspberryPiUtility::set_pitch_output(double v)
+{
+	ui.pitch_dis->display(v);
+}
