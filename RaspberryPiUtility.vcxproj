@@ -58,6 +58,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -89,6 +90,7 @@
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,6 +115,7 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="backendwrapper.cpp" />
     <ClCompile Include="control_in.cpp" />
     <ClCompile Include="control_out.cpp" />
     <ClCompile Include="main.cpp" />
@@ -129,6 +132,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="backendwrapper.h" />
+    <ClInclude Include="bridgein.h" />
+    <ClInclude Include="bridgeout.h" />
     <ClInclude Include="control_in.h" />
     <ClInclude Include="control_out.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />

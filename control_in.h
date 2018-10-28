@@ -2,19 +2,31 @@
 
 #include <QDoubleSpinBox>
 
-#include "raspberrypiutility.h"
+#include "bridgein.h"
 
-
-class ControlIn
+class ControlIn : BridgeIn<double, double>
 {
-public:
-	double const yaw;
-	double const pitch;
 
-	ControlIn(RaspberryPiUtility w) : 
-		yaw{ w.get_yaw_input()->value() },
-		pitch{ w.get_pitch_input()->value() }
-	{ }
+public:
+	ControlIn(Backend * const b, RaspberryPiUtility * const w) :
+		BridgeIn(b, w->get_yaw_input(), w->get_pitch_input())
+	{ 
+		/*
+		 * further modify/transform the pulled values from the ui...
+		 */
+	}
+	
+	/*
+	 * the function that actually bridges front end and backend by
+	 * acting as the slot for the button press
+	 */
+	void slot()
+	{
+		auto[yaw, pitch] = vs;
+
+		//b.get_control()->set_parameters(yaw, pitch);
+		printf("yolo\n");
+	}
 
 };
 

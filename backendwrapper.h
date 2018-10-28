@@ -1,6 +1,5 @@
 #pragma once
 
-#include "control_in.h"
 
 /*
  * the primary class for wrapping together all the backend objects and functions
@@ -16,6 +15,8 @@ private:
 	 * objects used in the backend services
 	 */
 
+	// Control c;
+
 public:
 	/*
 	 * constructor equipped with initializer list to initialize all the backend objects
@@ -25,14 +26,11 @@ public:
 
 	}
 
-
-
-	/*
-	 * the update functions, overloaded by input state
+	// return a const pointer to the control backend manager
+	/* Control * const get_control() { return &control; }
+	 *
+	 *
 	 */
-	void update(ControlIn in)
-	{
 
-	}
 
 };

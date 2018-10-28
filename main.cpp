@@ -8,10 +8,10 @@
 
 int main(int argc, char *argv[])
 {
-	Backend();
+	Backend b;
 
 	QApplication a(argc, argv);
-	RaspberryPiUtility w;
+	RaspberryPiUtility w(&b);
 
 	printf("printing ouptut");
 	w.show();
