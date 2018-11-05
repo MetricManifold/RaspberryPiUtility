@@ -3,16 +3,21 @@
 #include <tuple>
 
 #include "raspberrypiutility.h"
-#include "backendwrapper.h"
 
 template<typename ...Args>
 class BridgeOut
 {
 protected:
-	static RaspberryPiUtility * const w;
+	static RaspberryPiUtility * w;
 	std::tuple<Args...> vs;
-	BridgeOut(Args... args, RaspberryPiUtility * const w = nullptr) : vs{ args... }, w{ (w) ? w : this->w } {}
+
+	BridgeOut(Args... args) : vs{ args... } { }
 
 public:
-	virtual void update(RaspberryPiUtility * const) = 0;
+	virtual void update() = 0;
+	static void init(RaspberryPiUtility * w)
+	{
+		BridgeOut<Args...>::w = w;
+	}
 };
+

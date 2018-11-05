@@ -2,16 +2,22 @@
 
 #include <tuple>
 
-#include "raspberrypiutility.h"
 #include "backendwrapper.h"
 
 template<typename ...Args>
 class BridgeIn
 {
 protected:
-	Backend * const b;
+	static Backend * b;
 	std::tuple<Args...> vs;
-	BridgeIn(Backend * const b, Args ...args) : vs{ args... }, b{ b } { }
-	
+
+	BridgeIn(Args ...args) : vs{ args... } { }
+
 	virtual void slot() = 0;
+
+public:
+	static void init(Backend * b) 
+	{ 
+		BridgeIn<Args...>::b = b; 
+	}
 };
