@@ -124,6 +124,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="maximum">
+     <double>999.990000000000009</double>
+    </property>
    </widget>
    <widget class="QDoubleSpinBox" name="pitch_input">
     <property name="geometry">
@@ -133,6 +136,9 @@
       <width>64</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="maximum">
+     <double>999.990000000000009</double>
     </property>
    </widget>
    <widget class="QLCDNumber" name="pitch_dis">
