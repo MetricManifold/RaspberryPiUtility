@@ -116,10 +116,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="backendwrapper.cpp" />
+    <ClCompile Include="bridgein.cpp" />
+    <ClCompile Include="bridgeout.cpp" />
+    <ClCompile Include="controlapi.cpp" />
     <ClCompile Include="controlin.cpp" />
     <ClCompile Include="controlout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="raspberrypiutility.cpp" />
+    <ClCompile Include="serialport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="raspberrypiutility.h" />
@@ -134,9 +138,11 @@
     <ClInclude Include="backendwrapper.h" />
     <ClInclude Include="bridgein.h" />
     <ClInclude Include="bridgeout.h" />
+    <ClInclude Include="controlapi.h" />
     <ClInclude Include="controlin.h" />
     <ClInclude Include="controlout.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />
+    <ClInclude Include="serialport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -3,18 +3,21 @@
 #include <QDoubleSpinBox>
 
 #include "bridgein.h"
+#include "raspberrypiutility.h"
 
-class ControlIn : BridgeIn<double, double>
+class ControlIn : public BridgeIn<double, double>
 {
+	using BridgeIn<double, double>::BridgeIn;
 
 public:
-	ControlIn(Backend * const b, RaspberryPiUtility * const w) :
-		BridgeIn(b, w->get_yaw_input(), w->get_pitch_input())
-	{ 
+	ControlIn(RaspberryPiUtility * const w) :
+		BridgeIn(w->get_yaw_input(), w->get_pitch_input())
+	{
 		/*
 		 * further modify/transform the pulled values from the ui...
 		 */
 	}
+
 	
 	/*
 	 * the function that actually bridges front end and backend by

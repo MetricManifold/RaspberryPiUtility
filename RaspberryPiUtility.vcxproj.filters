@@ -28,37 +28,59 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Header Files\Control Bridge">
+    <Filter Include="Header Files\Motor Control">
+      <UniqueIdentifier>{029930c5-2494-4020-bef9-5750c7a61017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Bridge">
+      <UniqueIdentifier>{75030fdc-a50d-435d-9c78-e59fcce55d40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Bridge\Control Bridge">
       <UniqueIdentifier>{34bce466-831d-4d76-86ab-b66b7ae127d4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Control Bridge">
+    <Filter Include="Source Files\Bridge">
+      <UniqueIdentifier>{090a849d-7166-42de-b74f-01868dcd77bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Bridge\Control Bridge">
       <UniqueIdentifier>{bb1ffa76-8ce7-4998-a2cd-1d724ed299a4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Multiplier Bridge">
-      <UniqueIdentifier>{b5235456-1507-48be-b7a3-905ad8957b9e}</UniqueIdentifier>
+    <Filter Include="Source Files\Motor Control">
+      <UniqueIdentifier>{fa53211a-17c7-45ef-8d10-cfda6b994c52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Front End">
+      <UniqueIdentifier>{9ee09d10-b36e-4531-8883-d12f271ccc0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Front End">
+      <UniqueIdentifier>{3ed5c99c-ab46-43f8-9ac9-a6c160f25ea0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="raspberrypiutility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="backendwrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="controlin.cpp">
-      <Filter>Source Files\Control Bridge</Filter>
+      <Filter>Source Files\Bridge\Control Bridge</Filter>
     </ClCompile>
     <ClCompile Include="controlout.cpp">
-      <Filter>Source Files\Control Bridge</Filter>
+      <Filter>Source Files\Bridge\Control Bridge</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="raspberrypiutility.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
+    <ClCompile Include="bridgeout.cpp">
+      <Filter>Source Files\Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="bridgein.cpp">
+      <Filter>Source Files\Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="controlapi.cpp">
+      <Filter>Source Files\Motor Control</Filter>
+    </ClCompile>
+    <ClCompile Include="serialport.cpp">
+      <Filter>Source Files\Motor Control</Filter>
+    </ClCompile>
+    <ClCompile Include="raspberrypiutility.cpp">
+      <Filter>Source Files\Front End</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="raspberrypiutility.ui">
@@ -77,17 +99,28 @@
     <ClInclude Include="backendwrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bridgein.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bridgeout.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="controlin.h">
-      <Filter>Header Files\Control Bridge</Filter>
+      <Filter>Header Files\Bridge\Control Bridge</Filter>
     </ClInclude>
     <ClInclude Include="controlout.h">
-      <Filter>Header Files\Control Bridge</Filter>
+      <Filter>Header Files\Bridge\Control Bridge</Filter>
     </ClInclude>
+    <ClInclude Include="bridgein.h">
+      <Filter>Header Files\Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="bridgeout.h">
+      <Filter>Header Files\Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="controlapi.h">
+      <Filter>Header Files\Motor Control</Filter>
+    </ClInclude>
+    <ClInclude Include="serialport.h">
+      <Filter>Header Files\Motor Control</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="raspberrypiutility.h">
+      <Filter>Header Files\Front End</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>
