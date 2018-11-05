@@ -116,8 +116,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="backendwrapper.cpp" />
-    <ClCompile Include="control_in.cpp" />
-    <ClCompile Include="control_out.cpp" />
+    <ClCompile Include="controlin.cpp" />
+    <ClCompile Include="controlout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="raspberrypiutility.cpp" />
   </ItemGroup>
@@ -134,8 +134,8 @@
     <ClInclude Include="backendwrapper.h" />
     <ClInclude Include="bridgein.h" />
     <ClInclude Include="bridgeout.h" />
-    <ClInclude Include="control_in.h" />
-    <ClInclude Include="control_out.h" />
+    <ClInclude Include="controlin.h" />
+    <ClInclude Include="controlout.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

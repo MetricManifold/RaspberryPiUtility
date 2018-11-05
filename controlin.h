@@ -24,7 +24,7 @@ public:
 	{
 		auto[yaw, pitch] = vs;
 
-		//b.get_control()->set_parameters(yaw, pitch);
+		//b->get_control()->set_parameters(yaw, pitch);
 		printf("yaw = %lf, pitch = %lf\n", yaw, pitch);
 	}
 

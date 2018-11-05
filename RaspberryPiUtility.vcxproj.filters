@@ -34,6 +34,9 @@
     <Filter Include="Source Files\Control Bridge">
       <UniqueIdentifier>{bb1ffa76-8ce7-4998-a2cd-1d724ed299a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Multiplier Bridge">
+      <UniqueIdentifier>{b5235456-1507-48be-b7a3-905ad8957b9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,14 +45,14 @@
     <ClCompile Include="raspberrypiutility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="control_in.cpp">
-      <Filter>Source Files\Control Bridge</Filter>
-    </ClCompile>
-    <ClCompile Include="control_out.cpp">
-      <Filter>Source Files\Control Bridge</Filter>
-    </ClCompile>
     <ClCompile Include="backendwrapper.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controlin.cpp">
+      <Filter>Source Files\Control Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="controlout.cpp">
+      <Filter>Source Files\Control Bridge</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,12 +71,6 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="control_in.h">
-      <Filter>Header Files\Control Bridge</Filter>
-    </ClInclude>
-    <ClInclude Include="control_out.h">
-      <Filter>Header Files\Control Bridge</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -85,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="bridgeout.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controlin.h">
+      <Filter>Header Files\Control Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="controlout.h">
+      <Filter>Header Files\Control Bridge</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

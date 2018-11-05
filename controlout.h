@@ -6,11 +6,11 @@ class ControlOut : BridgeOut<double, double>
 {
 public:
 
-	ControlOut(double yaw_value, double pitch_value)
-		: BridgeOut(yaw_value, pitch_value)
+	ControlOut(double yaw_value, double pitch_value, RaspberryPiUtility * const w = nullptr)
+		: BridgeOut(yaw_value, pitch_value, w)
 	{ }
 
-	void update(RaspberryPiUtility * const w)
+	void update()
 	{
 		auto[yaw, pitch] = vs;
 
