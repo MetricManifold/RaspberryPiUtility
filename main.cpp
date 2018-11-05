@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	RaspberryPiUtility w(&b);
 
-	printf("printing ouptut");
+	printf("initialized program\n");
 	w.show();
 	return a.exec();
 }
