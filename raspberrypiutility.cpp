@@ -1,16 +1,19 @@
 #include "raspberrypiutility.h"
 
 #include "controlin.h"
+#include "controlout.h"
 
 RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	ControlIn::init(b);
+	ControlOut::init(this);
 
 	/*
 	 * create our algorithm objects
 	 */
-	connect(ui.btn_control, &QPushButton::clicked, this, [&]() { ControlIn(b, this).slot(); });
+	connect(ui.btn_control, &QPushButton::clicked, this, [&]() { ControlIn(this).slot(); });
 
 }
 
