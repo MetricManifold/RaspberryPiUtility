@@ -11,7 +11,7 @@
 #define MAX_DATA_LENGTH 64
 #define PORT_NAME "\\\\.\\COM20"
 
-namespace capi
+struct MotorControl
 {
 	void read();
 	void write();

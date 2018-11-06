@@ -72,14 +72,14 @@
     <ClCompile Include="bridgein.cpp">
       <Filter>Source Files\Bridge</Filter>
     </ClCompile>
-    <ClCompile Include="controlapi.cpp">
-      <Filter>Source Files\Motor Control</Filter>
-    </ClCompile>
     <ClCompile Include="serialport.cpp">
       <Filter>Source Files\Motor Control</Filter>
     </ClCompile>
     <ClCompile Include="raspberrypiutility.cpp">
       <Filter>Source Files\Front End</Filter>
+    </ClCompile>
+    <ClCompile Include="motorcontrol.cpp">
+      <Filter>Source Files\Motor Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,10 +111,10 @@
     <ClInclude Include="bridgeout.h">
       <Filter>Header Files\Bridge</Filter>
     </ClInclude>
-    <ClInclude Include="controlapi.h">
+    <ClInclude Include="serialport.h">
       <Filter>Header Files\Motor Control</Filter>
     </ClInclude>
-    <ClInclude Include="serialport.h">
+    <ClInclude Include="motorcontrol.h">
       <Filter>Header Files\Motor Control</Filter>
     </ClInclude>
   </ItemGroup>

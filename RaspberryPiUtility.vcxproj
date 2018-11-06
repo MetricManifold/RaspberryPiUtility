@@ -118,7 +118,7 @@
     <ClCompile Include="backendwrapper.cpp" />
     <ClCompile Include="bridgein.cpp" />
     <ClCompile Include="bridgeout.cpp" />
-    <ClCompile Include="controlapi.cpp" />
+    <ClCompile Include="motorcontrol.cpp" />
     <ClCompile Include="controlin.cpp" />
     <ClCompile Include="controlout.cpp" />
     <ClCompile Include="main.cpp" />
@@ -138,7 +138,7 @@
     <ClInclude Include="backendwrapper.h" />
     <ClInclude Include="bridgein.h" />
     <ClInclude Include="bridgeout.h" />
-    <ClInclude Include="controlapi.h" />
+    <ClInclude Include="motorcontrol.h" />
     <ClInclude Include="controlin.h" />
     <ClInclude Include="controlout.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />
