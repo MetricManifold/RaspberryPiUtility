@@ -1,6 +1,6 @@
 #include "raspberrypiutility.h"
 
-#include "controlin.h"
+//#include "controlin.h"
 
 RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 	: QMainWindow(parent)
@@ -10,7 +10,27 @@ RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 	/*
 	 * create our algorithm objects
 	 */
-	connect(ui.btn_control, &QPushButton::clicked, this, [&]() { ControlIn(b, this).slot(); });
+
+	// Upon pushing 'set coordinates' button send data to control 
+	connect(ui.btn_enter_coords, &QPushButton::clicked, this, [&]() { 
+
+		double yaw = this->get_yaw_input();
+		double pitch = this->get_pitch_input();
+		
+		// For testing purposes, data is being sent to the console
+		printf("yaw = %lf, pitch = %lf\n", yaw, pitch);
+
+		// Send data to Qt console
+		this->append_console(std::stringstream() << "Setting Altitude=" << pitch << ", Azimuth=" << yaw);
+
+		// Update display using data from control
+		// As a placeholder, we are displaying the input values directly
+		this->set_pitch_output(pitch);
+		this->set_yaw_output(yaw);
+
+	});
+
+	
 
 }
 
@@ -33,4 +53,8 @@ void RaspberryPiUtility::set_yaw_output(double v)
 void RaspberryPiUtility::set_pitch_output(double v)
 {
 	ui.pitch_dis->display(v);
+}
+
+void RaspberryPiUtility::append_console(std::stringstream line) {
+	ui.console->append(QString::fromStdString(line.str()));
 }

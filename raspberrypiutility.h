@@ -3,6 +3,10 @@
 #include <QtWidgets/QMainWindow>
 #include <QSignalMapper>
 
+#include <string>
+#include <iostream>
+#include <sstream>
+
 #include "ui_raspberrypiutility.h"
 #include "backendwrapper.h"
 
@@ -35,6 +39,8 @@ public:
 	void set_yaw_output(double v);
 	void set_pitch_output(double v);
 
+	// Function for writing data to console
+	void append_console(std::stringstream line); 
 
 
 };
