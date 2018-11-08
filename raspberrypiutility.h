@@ -41,6 +41,4 @@ public:
 
 	// Function for writing data to console
 	void append_console(std::stringstream line); 
-
-
 };

@@ -2,10 +2,11 @@
 
 //#include "controlin.h"
 
+
 RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 	: QMainWindow(parent)
 {
-	ui.setupUi(this);
+	ui.setupUi(this);	
 
 	/*
 	 * create our algorithm objects
@@ -22,6 +23,10 @@ RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 
 		// Send data to Qt console
 		this->append_console(std::stringstream() << "Setting Altitude=" << pitch << ", Azimuth=" << yaw);
+
+
+		// Inform user that telescope is moving (simulating for now)
+		this->append_console(std::stringstream() << "Tracking...");
 
 		// Update display using data from control
 		// As a placeholder, we are displaying the input values directly
