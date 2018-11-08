@@ -1,4 +1,8 @@
-
+/*!
+ * \file main.cpp
+ * \brief Main program for TelescopeControlSystem
+ * 
+ */
 
 #include "raspberrypiutility.h"
 #include "backendwrapper.h"
@@ -6,6 +10,13 @@
 #include <QtWidgets/QApplication>
 #include <iostream>
 
+/*!
+ * \brief Main method
+ * 
+ * \param argc
+ * \param argv
+ * \return int program status
+ */
 int main(int argc, char *argv[])
 {
 	Backend b;
