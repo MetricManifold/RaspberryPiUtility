@@ -52,12 +52,15 @@
     <Filter Include="Header Files\Front End">
       <UniqueIdentifier>{3ed5c99c-ab46-43f8-9ac9-a6c160f25ea0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Back End">
+      <UniqueIdentifier>{bde17c98-b598-406a-aacf-6759cfffc2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Back End">
+      <UniqueIdentifier>{91056877-fb6e-4375-961d-1410f2c45a74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="backendwrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="controlin.cpp">
@@ -81,6 +84,15 @@
     <ClCompile Include="motorcontrol.cpp">
       <Filter>Source Files\Motor Control</Filter>
     </ClCompile>
+    <ClCompile Include="control.cpp">
+      <Filter>Source Files\Motor Control</Filter>
+    </ClCompile>
+    <ClCompile Include="gpio.cpp">
+      <Filter>Source Files\Motor Control</Filter>
+    </ClCompile>
+    <ClCompile Include="backendwrapper.cpp">
+      <Filter>Source Files\Back End</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="raspberrypiutility.ui">
@@ -95,9 +107,6 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="backendwrapper.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="controlin.h">
       <Filter>Header Files\Bridge\Control Bridge</Filter>
@@ -116,6 +125,15 @@
     </ClInclude>
     <ClInclude Include="motorcontrol.h">
       <Filter>Header Files\Motor Control</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
+      <Filter>Header Files\Motor Control</Filter>
+    </ClInclude>
+    <ClInclude Include="gpio.h">
+      <Filter>Header Files\Motor Control</Filter>
+    </ClInclude>
+    <ClInclude Include="backendwrapper.h">
+      <Filter>Header Files\Back End</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -118,10 +118,12 @@
     <ClCompile Include="backendwrapper.cpp" />
     <ClCompile Include="bridgein.cpp" />
     <ClCompile Include="bridgeout.cpp" />
+    <ClCompile Include="control.cpp" />
     <ClCompile Include="motorcontrol.cpp" />
     <ClCompile Include="controlin.cpp" />
     <ClCompile Include="controlout.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="gpio.cpp" />
     <ClCompile Include="raspberrypiutility.cpp" />
     <ClCompile Include="serialport.cpp" />
   </ItemGroup>
@@ -138,10 +140,12 @@
     <ClInclude Include="backendwrapper.h" />
     <ClInclude Include="bridgein.h" />
     <ClInclude Include="bridgeout.h" />
+    <ClInclude Include="control.h" />
     <ClInclude Include="motorcontrol.h" />
     <ClInclude Include="controlin.h" />
     <ClInclude Include="controlout.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />
+    <ClInclude Include="gpio.h" />
     <ClInclude Include="serialport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

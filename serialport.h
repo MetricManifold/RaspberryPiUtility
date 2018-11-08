@@ -17,19 +17,33 @@ class SerialPort
 
 private:
 
-	HANDLE handler;
+	/*
+	 * ensure these variables are initialized only on windows systems
+	 */
+#ifdef _WIN64
 	bool connected;
-	COMSTAT status;
-	DWORD errors;
+	HANDLE handler;
+#endif
 
 public:
-
-	SerialPort(char *port);
+	
+	SerialPort(char const *port);
 	~SerialPort();
 
-	int read(char *buffer, unsigned int buf_size);
-	bool write(char *buffer, unsigned int buf_size);
-	bool isConnected();
+	/*
+	 * read the data from the arduino port
+	 */
+	int read(char *buffer, unsigned int buf_size) const;
+
+	/*
+	 * write the data into the arduio port
+	 */
+	bool write(char *buffer, unsigned int buf_size) const;
+
+	/*
+	 * verify the connection is established
+	 */
+	bool has_con() const;
 
 };
 

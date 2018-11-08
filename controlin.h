@@ -4,6 +4,7 @@
 
 #include "bridgein.h"
 #include "raspberrypiutility.h"
+#include "control.h"
 
 class ControlIn : public BridgeIn<double, double>
 {
@@ -27,7 +28,7 @@ public:
 	{
 		auto[yaw, pitch] = vs;
 
-		//b->get_control()->set_parameters(yaw, pitch);
+		tmc::to_coords(yaw, pitch);
 		printf("yaw = %lf, pitch = %lf\n", yaw, pitch);
 	}
 

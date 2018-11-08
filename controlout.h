@@ -15,8 +15,8 @@ public:
 	{
 		auto[yaw, pitch] = vs;
 
-		//BridgeOut::w->set_yaw_output(yaw);
-		//BridgeOut::w->set_pitch_output(pitch);
+		w->set_yaw_output(yaw);
+		w->set_pitch_output(pitch);
 	}
 };
 
