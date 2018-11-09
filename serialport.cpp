@@ -70,6 +70,10 @@ SerialPort::~SerialPort()
 
 int SerialPort::read(char *buffer, unsigned int buf_size) const
 {
+	// read always has to be initiated by the PIN_READ = HIGH
+	static Pin pread(PIN_READ, "out");
+	pread.setval_gpio(1);
+
 	COMSTAT status;
 	DWORD errors;
 	DWORD bytes_read;
@@ -81,9 +85,11 @@ int SerialPort::read(char *buffer, unsigned int buf_size) const
 		unsigned int toRead = (status.cbInQue > buf_size) ? buf_size : status.cbInQue;
 		if (ReadFile(handler, buffer, toRead, &bytes_read, NULL))
 		{
+			pread.setval_gpio(0);
 			return bytes_read;
 		}
 	}
+	pread.setval_gpio(0);
 	return false;
 }
 
@@ -133,5 +139,5 @@ bool SerialPort::write(char *buffer, unsigned int buf_size)
 
 bool SerialPort::has_con() const
 {
-	return this->connected;
+	return connected;
 }

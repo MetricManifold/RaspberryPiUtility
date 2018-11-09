@@ -3,7 +3,7 @@
 
 
 Pin::Pin() : Pin(4) {}
-Pin::Pin(int gpionum) : gpionum{ gpionum } { setval_gpio(gpionum); }
+Pin::Pin(int gpionum) : gpionum{ gpionum } { export_gpio(); setval_gpio(0); }
 Pin::Pin(int gpionum, char * dir) : Pin(gpionum) { setdir_gpio(dir); }
 
 int Pin::export_gpio()

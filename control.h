@@ -5,42 +5,51 @@
 
 #include "motorcontrol.h"
 
+
+typedef double Degree;
+typedef double RealAngle;
+
+// function that does nothing, helper as default parameter
+static void(*__no_fn)() = []() {};
+
 /*
  * the API for the Telescope Motor Control
  * there is no function to read the current coordinates as the design
  * does not allow the motor control to be polled
  */
 
-typedef double Degree;
-typedef double RealAngle;
-
-extern void(*__no_fn)();
-extern bool __queued;
-extern std::thread __queue_thread;
-extern std::mutex __mm;
-
+/*!
+ *    \namespace RaspberryPiUtility
+ *    \file raspberrypiutility.h
+ *    \brief RaspberryPiUtility class header provides communication between the UI and internal modules (MotorControl and Algorithmic modules)
+ *    \details Derived from QMainWindow base class
+ *    \authors Steve Silber, Conor Dunne
+ *    \date 2018-11
+ *
+ */
 namespace tmc
 {
 	/*
 	 * takes a pair of coordinates as a destination to move the telescope to
 	 * returns the coordinates before initiating the move
+	 * this function is NONBLOCKING
+	 * @param yaw The yaw value to act as new position in horizontal direction
+	 * @param pitch The pitch value to act as new position in vertical direction
+	 * @param end_fn The function that's called when the motor activity finishes
+	 * @param fn_args Arguments passed to the end_fn function
 	 */
 	template<typename T = decltype(__no_fn), typename ...Args>
 	bool to_coords(Degree yaw, Degree pitch, T end_fn = __no_fn, Args ...fn_args)
 	{
 		if (motor_driver().is_free())
 		{
-			__queue_thread.join();
-			__queue_thread = std::thread([&]()
+			std::thread t([&]() 
 			{
-				{
-					std::scoped_lock lck(__mm);
-					motor_driver().write_pos(yaw, pitch);
-				}
+				motor_driver().write_pos(yaw, pitch);
 				while (!motor_driver().is_free());
-				
-				end_fn(fn_args...);
+				__no_fn(fn_args...);
 			});
+			t.detach();
 			return true;
 		}
 		return false;
@@ -50,23 +59,24 @@ namespace tmc
 	 * takes a pair of velocity coordinates, which will persistently move the
 	 * telescope until stop is called or end of freedom of motion is reached
 	 * returns the coordinates before initiating the translation
+	 * this function is NONBLOCKING
+	 * @param yaw The yaw value to act as speed in horizontal direction
+	 * @param pitch The pitch value to act as speed in vertical direction
+	 * @param end_fn The function that's called when the motor activity finishes
+	 * @param fn_args Arguments passed to the end_fn function
 	 */
 	template<typename T = decltype(__no_fn), typename ...Args>
 	bool set_velocity(Degree yaw, Degree pitch, T end_fn = __no_fn, Args ...fn_args)
 	{
 		if (motor_driver().is_free())
 		{
-			__queue_thread.join();
-			__queue_thread = std::thread([&]()
+			std::thread t([&]()
 			{
-				{
-					std::scoped_lock lck(__mm);
-					motor_driver().write_vel(yaw, pitch);
-				}
+				motor_driver().write_vel(yaw, pitch);
 				while (!motor_driver().is_free());
-
-				end_fn(fn_args...);
+				__no_fn(fn_args...);
 			});
+			t.detach();
 			return true;
 		}
 		return false;

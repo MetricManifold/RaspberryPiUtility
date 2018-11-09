@@ -4,18 +4,19 @@
 
 std::pair<double, double> MotorControl::read_pos()
 {
+	// prevent concurrent reads
+	std::lock_guard lck(mm);
+
 	char data[MSG_LENGTH];
 	if (serial.has_con())
 	{
 		// request and read data
-		pread.setval_gpio(1);
-		int 
-			yaw = 0, 
+		int
+			yaw = 0,
 			pitch = 0;
 
 		int i = 0;
 		serial.read(data, MSG_LENGTH);
-		pread.setval_gpio(0);
 
 		// parse the sent data
 		for (char *c = data + MSG_LENGTH - 1; c >= data; --c, ++i)
@@ -45,7 +46,7 @@ std::pair<double, double> MotorControl::read_pos()
 		}
 
 		return { yaw, pitch };
-		
+
 	}
 	else
 	{
@@ -58,22 +59,22 @@ std::pair<double, double> MotorControl::read_pos()
 
 bool MotorControl::write_pos(int yaw, int pitch)
 {
-	{
-		std::lock_guard lck(mm);
+	// prevent concurrent writes
+	std::lock_guard lck(mm);
 
-		int isup;
-		pstate.getval_gpio(isup);
-		if (isup)
-		{
-			return false;
-		}
+	int isup;
+	pstate.getval_gpio(isup);
+	if (isup)
+	{
+		return false;
 	}
+
 	if (serial.has_con())
 	{
 		ppos.setval_gpio(1);
 
 		// writing string to arduino
-		char data[MSG_LENGTH];
+		char data[MSG_LENGTH + 1];
 
 
 		// encode the data
@@ -111,17 +112,12 @@ bool MotorControl::write_pos(int yaw, int pitch)
 				}
 			}
 		}
-		printf("%s", data);
+		data[MSG_LENGTH] = '\0';
+		printf("%s\n", data);
 
-		sprintf(data,
-			MSG_FORMAT,
-			static_cast<int>(yaw),
-			static_cast<int>(pitch));
-
-		serial.write(data, MSG_LENGTH);
-
-		ppos.setval_gpio(0);
-		return true;
+		bool r = serial.write(data, MSG_LENGTH);
+		pvel.setval_gpio(0);
+		return r;
 	}
 	else
 	{
@@ -133,23 +129,22 @@ bool MotorControl::write_pos(int yaw, int pitch)
 
 bool MotorControl::write_vel(int yaw, int pitch)
 {
-	{
-		std::lock_guard lck(mm);
+	// prevent concurent writes
+	std::lock_guard lck(mm);
 
-		int isup;
-		pstate.getval_gpio(isup);
-		if (isup)
-		{
-			return false;
-		}
+	int isup;
+	pstate.getval_gpio(isup);
+	if (isup)
+	{
+		return false;
 	}
+
 	if (serial.has_con())
 	{
 		pvel.setval_gpio(1);
 
 		// writing string to arduino
 		char data[MSG_LENGTH];
-
 
 		// encode the data
 		int i = 0;
@@ -193,10 +188,9 @@ bool MotorControl::write_vel(int yaw, int pitch)
 			static_cast<int>(yaw),
 			static_cast<int>(pitch));
 
-		serial.write(data, MSG_LENGTH);
-
+		bool r = serial.write(data, MSG_LENGTH);
 		pvel.setval_gpio(0);
-		return true;
+		return r;
 	}
 	else
 	{
@@ -224,7 +218,7 @@ bool MotorControl::is_free()
 
 	int isup;
 	pstate.getval_gpio(isup);
-	return isup;
+	return !isup;
 }
 
 
