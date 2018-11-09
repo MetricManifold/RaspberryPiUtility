@@ -8,7 +8,7 @@
  *
  */
 
-#include "raspberrypiutility.h"
+#include "telescopeui.h"
 
 /*!
  * \brief Implementation of main constructor for RaspberryPiUtility. Creates an instance of the Qt UI template, forming the UI for TelescopeControl. 
@@ -16,7 +16,7 @@
  * \param b pointer of type Backend
  * \param parent pointer of type QWidget
  */
-RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
+TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 : QMainWindow(parent)
 {
 	ui.setupUi(this); ///< Creates UI elements
@@ -35,11 +35,13 @@ RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 		printf("yaw = %lf, pitch = %lf\n", yaw, pitch);
 
 		// Send data to Qt console
-		this->append_console(std::stringstream() << "Setting Altitude=" << pitch << ", Azimuth=" << yaw);
+        std::stringstream ss;
+        ss << "Setting Alitude=" << pitch << ", Azimuth=" << yaw;
+		this->append_console(ss.str());
 
 
 		// Inform user that telescope is moving (simulating for now)
-		this->append_console(std::stringstream() << "Tracking...");
+		this->append_console("Tracking...");
 
 		// Update display using data from control
 		// As a placeholder, we are displaying the input values directly
@@ -56,7 +58,7 @@ RaspberryPiUtility::RaspberryPiUtility(Backend * const b, QWidget *parent)
 * \brief Getter method for yaw input from UI
 * \return double value for yaw
 */
-double RaspberryPiUtility::get_yaw_input() const
+double TelescopeUI::get_yaw_input() const
 {
 	return ui.yaw_input->value();
 }
@@ -65,7 +67,7 @@ double RaspberryPiUtility::get_yaw_input() const
  * \brief Getter method for pitch input from UI
  * \return double value for pitch
  */
-double RaspberryPiUtility::get_pitch_input() const
+double TelescopeUI::get_pitch_input() const
 {
 	return ui.pitch_input->value();
 }
@@ -75,7 +77,7 @@ double RaspberryPiUtility::get_pitch_input() const
 *
 * \param v represents double value for yaw
 */
-void RaspberryPiUtility::set_yaw_output(double v)
+void TelescopeUI::set_yaw_output(double v)
 {
 	ui.yaw_dis->display(v);
 }
@@ -85,7 +87,7 @@ void RaspberryPiUtility::set_yaw_output(double v)
 *
 * \param v represents double value for pitch
 */
-void RaspberryPiUtility::set_pitch_output(double v)
+void TelescopeUI::set_pitch_output(double v)
 {
 	ui.pitch_dis->display(v);
 }
@@ -93,8 +95,8 @@ void RaspberryPiUtility::set_pitch_output(double v)
 /*!
 * \brief Setter method for writing lines to internal UI console
 *
-* \param StringStream that contains the line to be displayed on the console
+* \param String that contains the line to be displayed on the console
 */
-void RaspberryPiUtility::append_console(std::stringstream line) {
-	ui.console->append(QString::fromStdString(line.str()));
+void TelescopeUI::append_console(std::string line) {
+	ui.console->append(QString::fromStdString(line));
 }

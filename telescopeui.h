@@ -20,7 +20,7 @@
 #include "ui_raspberrypiutility.h" ///< Qt template UI generated using Qt Creator
 #include "backendwrapper.h"
 
-class RaspberryPiUtility : public QMainWindow
+class TelescopeUI: public QMainWindow
 {
 	Q_OBJECT
 private:
@@ -33,7 +33,7 @@ public:
 	 * \param Constant backend wrapper as pointer
 	 * \param parent pointer of type QWidget
 	 */
-	RaspberryPiUtility(Backend * const, QWidget *parent = Q_NULLPTR);
+	TelescopeUI(Backend * const, QWidget *parent = Q_NULLPTR);
 
 
 
@@ -70,8 +70,8 @@ public:
 	/*!
 	 * \brief Setter method for writing lines to internal UI console
 	 * 
-	 * \param StringStream that contains the line to be displayed on the console
+	 * \param String that contains the line to be displayed on the console
 	 */
-	void append_console(std::stringstream line); 
+	void append_console(std::string line); 
 };
 

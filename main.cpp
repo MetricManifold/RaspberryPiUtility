@@ -4,7 +4,7 @@
  * 
  */
 
-#include "raspberrypiutility.h"
+#include "telescopeui.h"
 #include "backendwrapper.h"
 
 #include <QtWidgets/QApplication>
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // for High DPI displays
 
 	QApplication a(argc, argv);
-	RaspberryPiUtility w(&b);
+	TelescopeUI w(&b);
 
 	printf("initialized program\n");
 	w.show();
