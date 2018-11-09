@@ -261,3 +261,17 @@ __pycache__/
 *.pyc
 
 GeneratedFiles/
+
+# make and qmake messy files
+*.o
+moc_*.h
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+
+
+# UNIX makefile, built package
+.qmake.stash
+Makefile
+telescope
