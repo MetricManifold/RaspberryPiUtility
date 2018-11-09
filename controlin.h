@@ -3,7 +3,7 @@
 #include <QDoubleSpinBox>
 
 #include "bridgein.h"
-#include "raspberrypiutility.h"
+#include "telescopeui.h"
 #include "control.h"
 
 class ControlIn : public BridgeIn<double, double>
@@ -11,7 +11,7 @@ class ControlIn : public BridgeIn<double, double>
 	using BridgeIn<double, double>::BridgeIn;
 
 public:
-	ControlIn(RaspberryPiUtility * const w) :
+	ControlIn(TelescopeUI * const w) :
 		BridgeIn(w->get_yaw_input(), w->get_pitch_input())
 	{
 		/*

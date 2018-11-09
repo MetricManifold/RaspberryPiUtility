@@ -1,6 +1,6 @@
 
 #include "controlout.h"
 
-RaspberryPiUtility * ControlOut::w;
+TelescopeUI * ControlOut::w;
 
 

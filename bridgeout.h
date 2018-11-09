@@ -2,20 +2,20 @@
 
 #include <tuple>
 
-#include "raspberrypiutility.h"
+#include "telescopeui.h"
 
 template<typename ...Args>
 class BridgeOut
 {
 protected:
-	static RaspberryPiUtility * w;
+	static TelescopeUI * w;
 	std::tuple<Args...> vs;
 
 	BridgeOut(Args... args) : vs{ args... } { }
 
 public:
 	virtual void update() = 0;
-	static void init(RaspberryPiUtility * w)
+	static void init(TelescopeUI * w)
 	{
 		BridgeOut<Args...>::w = w;
 	}

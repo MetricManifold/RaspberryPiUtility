@@ -78,9 +78,6 @@
     <ClCompile Include="serialport.cpp">
       <Filter>Source Files\Motor Control</Filter>
     </ClCompile>
-    <ClCompile Include="raspberrypiutility.cpp">
-      <Filter>Source Files\Front End</Filter>
-    </ClCompile>
     <ClCompile Include="motorcontrol.cpp">
       <Filter>Source Files\Motor Control</Filter>
     </ClCompile>
@@ -92,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="backendwrapper.cpp">
       <Filter>Source Files\Back End</Filter>
+    </ClCompile>
+    <ClCompile Include="telescopeui.cpp">
+      <Filter>Source Files\Front End</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +137,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="raspberrypiutility.h">
+    <QtMoc Include="telescopeui.h">
       <Filter>Header Files\Front End</Filter>
     </QtMoc>
   </ItemGroup>
