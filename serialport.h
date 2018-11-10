@@ -1,9 +1,8 @@
 #pragma once
 
+#define ARDUINO_WAIT_TIME 200
 
-#define ARDUINO_WAIT_TIME 2000
-
-
+#define PORT_NAME "\\\\.\\COM1"
 #ifdef _WIN64
 
 #include <windows.h>

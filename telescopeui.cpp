@@ -9,6 +9,8 @@
  */
 
 #include "telescopeui.h"
+#include "controlin.h"
+#include "controlout.h"
 
 /*!
  * \brief Implementation of main constructor for RaspberryPiUtility. Creates an instance of the Qt UI template, forming the UI for TelescopeControl. 
@@ -21,6 +23,9 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 {
 	ui.setupUi(this); ///< Creates UI elements
 
+	ControlIn::init(b);
+	ControlOut::init(this);
+
 	/*
 	 * create our algorithm objects
 	 */
@@ -28,12 +33,11 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 	// Upon pushing 'set coordinates' button send data to control 
 	connect(ui.btn_enter_coords, &QPushButton::clicked, this, [&]() { 
 
+		ControlIn(this).slot();
+
 		double yaw = this->get_yaw_input();
 		double pitch = this->get_pitch_input();
 		
-		// For testing purposes, data is being sent to the console
-		printf("yaw = %lf, pitch = %lf\n", yaw, pitch);
-
 		// Send data to Qt console
         std::stringstream ss;
         ss << "Setting Alitude=" << pitch << ", Azimuth=" << yaw;
@@ -45,8 +49,8 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 
 		// Update display using data from control
 		// As a placeholder, we are displaying the input values directly
-		this->set_pitch_output(pitch);
-		this->set_yaw_output(yaw);
+		// this->set_pitch_output(pitch);
+		// this->set_yaw_output(yaw);
 
 	});
 

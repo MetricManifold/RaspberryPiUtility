@@ -7,15 +7,10 @@
 #include <chrono>
 
 #include "serialport.h"
+#include "fakeserial.h"
 #include "gpio.h"
+#include "coordencoder.h"
 
-#define PORT_NAME "\\\\.\\COM1"
-#define STR(X) #X
-
-#define MSG_YAW_POS 9
-#define MSG_PITCH_POS 7
-#define MSG_LENGTH (MSG_YAW_POS + MSG_PITCH_POS)
-#define MSG_FORMAT ("%" STR(MSG_YAW_POS) "s%" STR(MSG_PITCH_POS) "s")
 
 #define BAD_READ (std::pair{ -1.0, -1.0 })
 
@@ -55,7 +50,7 @@ public:
 	 * @param pitch The new pitch position for the telescope
 	 * @returns Whether the write is successful (true) or not (false)
 	 */
-	bool write_pos(int, int);
+	bool write_pos(double, double);
 
 	/*
 	 * writes the provided yaw and pitch to the serial port to give the motors
@@ -64,13 +59,19 @@ public:
 	 * @param pitch The new pitch velocity for the telescope
 	 * @returns Whether the write is successful (true) or not (false)
 	 */
-	bool write_vel(int, int);
+	bool write_vel(double, double);
 
 	/*
 	 * returns whether the activity pin is HIGH or LOW
 	 * @returns If the activity pin is HIGH then false, LOW then true
 	 */
 	bool is_free();
+
+	static MotorControl &get_instance()
+	{
+		static MotorControl instance;
+		return instance;
+	}
 
 	/*
 	 * let the motor driver function, which returns the state, easily access
@@ -117,6 +118,5 @@ private:
 
 static MotorControl &motor_driver()
 {
-	static MotorControl state;
-	return state;
+	return MotorControl::get_instance();
 }
