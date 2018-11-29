@@ -26,7 +26,7 @@ SerialPort::SerialPort(char const *port)
 
 		else
 		{
-			printf("Extraneous error while initalizing serial port.");
+			printf("Extraneous error while initalizing serial port.\n");
 		}
 	}
 	else 
@@ -34,7 +34,7 @@ SerialPort::SerialPort(char const *port)
 		DCB dcbSerialParameters = { 0 };
 		if (!GetCommState(handler, &dcbSerialParameters)) 
 		{
-			printf("Failed to get current serial parameters");
+			printf("Failed to get current serial parameters\n");
 		}
 		else 
 		{
@@ -96,7 +96,6 @@ int SerialPort::read(char *buffer, unsigned int buf_size) const
 
 bool SerialPort::write(char *buffer, unsigned int buf_size) const
 {
-	HANDLE handler;
 	COMSTAT status;
 	DWORD errors;
 	DWORD bytes_send;

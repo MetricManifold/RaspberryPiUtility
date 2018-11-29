@@ -58,6 +58,12 @@
     <Filter Include="Source Files\Back End">
       <UniqueIdentifier>{91056877-fb6e-4375-961d-1410f2c45a74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Test">
+      <UniqueIdentifier>{f690decf-87dd-4746-84b8-6ca7cc5d2c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Test">
+      <UniqueIdentifier>{0bf512f0-2b79-4d9b-aad6-d0a18bba64ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -88,6 +94,15 @@
       <Filter>Source Files\Motor Control</Filter>
     </ClCompile>
     <ClCompile Include="backendwrapper.cpp">
+      <Filter>Source Files\Back End</Filter>
+    </ClCompile>
+    <ClCompile Include="fakeserial.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="coordencoder.cpp">
+      <Filter>Source Files\Motor Control</Filter>
+    </ClCompile>
+    <ClCompile Include="translation.cpp">
       <Filter>Source Files\Back End</Filter>
     </ClCompile>
     <ClCompile Include="telescopeui.cpp">
@@ -133,6 +148,15 @@
       <Filter>Header Files\Motor Control</Filter>
     </ClInclude>
     <ClInclude Include="backendwrapper.h">
+      <Filter>Header Files\Back End</Filter>
+    </ClInclude>
+    <ClInclude Include="fakeserial.h">
+      <Filter>Header Files\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="coordencoder.h">
+      <Filter>Header Files\Motor Control</Filter>
+    </ClInclude>
+    <ClInclude Include="translation.h">
       <Filter>Header Files\Back End</Filter>
     </ClInclude>
   </ItemGroup>

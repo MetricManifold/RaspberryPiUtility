@@ -5,6 +5,7 @@
 #include "bridgein.h"
 #include "telescopeui.h"
 #include "control.h"
+#include "controlout.h"
 
 class ControlIn : public BridgeIn<double, double>
 {
@@ -29,7 +30,10 @@ public:
 		auto[yaw, pitch] = vs;
 
 		tmc::to_coords(yaw, pitch);
-		printf("yaw = %lf, pitch = %lf\n", yaw, pitch);
+		printf("yaw/pitch input, '%lf/%lf'\n", yaw, pitch);
+		
+		auto[ryaw, rpitch] = tmc::get_coords();
+		ControlOut(ryaw, rpitch).update();
 	}
 
 };
