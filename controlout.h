@@ -14,6 +14,7 @@ public:
 	void update()
 	{
 		auto[yaw, pitch] = vs;
+		printf("yaw/pitch output, '%lf/%lf'\n", yaw, pitch);
 
 		w->set_yaw_output(yaw);
 		w->set_pitch_output(pitch);

@@ -59,6 +59,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/DDEBUG=1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,13 +120,16 @@
     <ClCompile Include="bridgein.cpp" />
     <ClCompile Include="bridgeout.cpp" />
     <ClCompile Include="control.cpp" />
+    <ClCompile Include="coordencoder.cpp" />
     <ClCompile Include="motorcontrol.cpp" />
     <ClCompile Include="controlin.cpp" />
     <ClCompile Include="controlout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="gpio.cpp" />
     <ClCompile Include="serialport.cpp" />
+    <ClCompile Include="fakeserial.cpp" />
     <ClCompile Include="telescopeui.cpp" />
+    <ClCompile Include="translation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="raspberrypiutility.ui" />
@@ -138,12 +142,15 @@
     <ClInclude Include="bridgein.h" />
     <ClInclude Include="bridgeout.h" />
     <ClInclude Include="control.h" />
+    <ClInclude Include="coordencoder.h" />
+    <ClInclude Include="fakeserial.h" />
     <ClInclude Include="motorcontrol.h" />
     <ClInclude Include="controlin.h" />
     <ClInclude Include="controlout.h" />
     <ClInclude Include="GeneratedFiles\ui_raspberrypiutility.h" />
     <ClInclude Include="gpio.h" />
     <ClInclude Include="serialport.h" />
+    <ClInclude Include="translation.h" />
     <QtMoc Include="telescopeui.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
