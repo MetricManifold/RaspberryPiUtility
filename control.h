@@ -12,18 +12,14 @@ typedef double RealAngle;
 // function that does nothing, helper as default parameter
 static void(*__no_fn)() = []() {};
 
-/*
- * the API for the Telescope Motor Control
- * there is no function to read the current coordinates as the design
- * does not allow the motor control to be polled
- */
 
 /*!
- *    \namespace RaspberryPiUtility
- *    \file raspberrypiutility.h
- *    \brief RaspberryPiUtility class header provides communication between the UI and internal modules (MotorControl and Algorithmic modules)
- *    \details Derived from QMainWindow base class
- *    \authors Steve Silber, Conor Dunne
+ *    \namespace tmc
+ *    \file control.h
+ *    \brief the API for the Telescope Motor Control
+ *			there is no function to read the current coordinates as the design
+ *			does not allow the motor control to be polled
+ *    \authors Steve Silber, Alex Yan
  *    \date 2018-11
  *
  */
@@ -41,18 +37,17 @@ namespace tmc
 	template<typename T = decltype(__no_fn), typename ...Args>
 	bool to_coords(Degree yaw, Degree pitch, T end_fn = __no_fn, Args ...fn_args)
 	{
-		if (motor_driver().is_free())
+		bool r = motor_driver().write_pos(yaw, pitch);
+		if (r)
 		{
-			std::thread t([&]() 
+			std::thread([&]()
 			{
-				motor_driver().write_pos(yaw, pitch);
 				while (!motor_driver().is_free());
-				__no_fn(fn_args...);
-			});
-			t.detach();
-			return true;
+				//__no_fn(fn_args...);
+			}).detach();
 		}
-		return false;
+		
+		return r;
 	}
 
 	/*
@@ -68,19 +63,20 @@ namespace tmc
 	template<typename T = decltype(__no_fn), typename ...Args>
 	bool set_velocity(Degree yaw, Degree pitch, T end_fn = __no_fn, Args ...fn_args)
 	{
-		if (motor_driver().is_free())
+		bool r = motor_driver().write_vel(yaw, pitch);
+		if (r)
 		{
-			std::thread t([&]()
+			std::thread([&]()
 			{
-				motor_driver().write_vel(yaw, pitch);
 				while (!motor_driver().is_free());
-				__no_fn(fn_args...);
-			});
-			t.detach();
-			return true;
+				//__no_fn(fn_args...);
+			}).detach();
 		}
-		return false;
+
+		return r;
 	}
+
+	std::pair<Degree, Degree> get_coords();
 
 	/*
 	 * calls an all stop on the telescope movement, if the telescope isn't moving,
