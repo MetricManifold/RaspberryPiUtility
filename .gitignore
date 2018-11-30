@@ -269,7 +269,7 @@ moc_*.cpp
 qrc_*.cpp
 ui_*.h
 .metadata
-
+latex
 
 
 # UNIX makefile, built package
