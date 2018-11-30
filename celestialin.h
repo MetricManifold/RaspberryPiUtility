@@ -4,6 +4,7 @@
 #include "telescopeui.h"
 #include "control.h"
 #include "celestialdb.h"
+#include "star.h"
 
 class CelestialIn : public BridgeIn<std::string>
 {
@@ -16,6 +17,7 @@ public:
 		/*
 		 * further modify/transform the pulled values from the ui...
 		 */
+
 	}
 
 
@@ -26,7 +28,7 @@ public:
 	void slot()
 	{
 		auto[object_name] = vs;
-
+		Star(object_name.c_str());
 	}
 
 };
