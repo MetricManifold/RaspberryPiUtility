@@ -30,40 +30,40 @@ public:
 	MotorControl(MotorControl const&) = delete;
 	void operator=(MotorControl const&) = delete;
 
-	/*
+	/**
 	 * returns the position read in from the serial port, doesn't
 	 * trigger any pins
-	 * @returns Pair object containing the yaw and pitch, respectively
+	 * @return Pair object containing the yaw and pitch, respectively
 	 */
 	std::pair<double, double> read_pos();
 
-	/*
+	/**
 	 * calls the all stop command by flipping the required pin to HIGH;
 	 * this is blocking until activity pin is LOW
 	 */
 	void all_stop();
 
-	/*
+	/**
 	 * writes the provided yaw and pitch to the serial port to give the motors
 	 * a new direction, will not write if the resource is active
 	 * @param yaw The new yaw position for the telescope
 	 * @param pitch The new pitch position for the telescope
-	 * @returns Whether the write is successful (true) or not (false)
+	 * @return Whether the write is successful (true) or not (false)
 	 */
 	bool write_pos(double, double);
 
-	/*
+	/**
 	 * writes the provided yaw and pitch to the serial port to give the motors
 	 * a new velocity, will not write if the resource is active
 	 * @param yaw The new yaw velocity for the telescope
 	 * @param pitch The new pitch velocity for the telescope
-	 * @returns Whether the write is successful (true) or not (false)
+	 * @return Whether the write is successful (true) or not (false)
 	 */
 	bool write_vel(double, double);
 
-	/*
+	/**
 	 * returns whether the activity pin is HIGH or LOW
-	 * @returns If the activity pin is HIGH then false, LOW then true
+	 * @return If the activity pin is HIGH then false, LOW then true
 	 */
 	bool is_free();
 
@@ -73,7 +73,7 @@ public:
 		return instance;
 	}
 
-	/*
+	/**
 	 * let the motor driver function, which returns the state, easily access
 	 * members from this class
 	 */

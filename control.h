@@ -1,3 +1,5 @@
+
+
 #pragma once
 
 #include <utility>
@@ -25,7 +27,7 @@ static void(*__no_fn)() = []() {};
  */
 namespace tmc
 {
-	/*
+	/**
 	 * takes a pair of coordinates as a destination to move the telescope to
 	 * returns the coordinates before initiating the move
 	 * this function is NONBLOCKING
@@ -50,7 +52,7 @@ namespace tmc
 		return r;
 	}
 
-	/*
+	/**
 	 * takes a pair of velocity coordinates, which will persistently move the
 	 * telescope until stop is called or end of freedom of motion is reached
 	 * returns the coordinates before initiating the translation
@@ -78,10 +80,10 @@ namespace tmc
 
 	std::pair<Degree, Degree> get_coords();
 
-	/*
+	/**
 	 * calls an all stop on the telescope movement, if the telescope isn't moving,
 	 * there is no effect
-	 * returns the coordinates after stopping
+	 * @return the coordinates after stopping
 	 * returning the coordinates means that a stop command could be BLOCKING
 	 */
 	template<typename T = decltype(__no_fn), typename ...Args>

@@ -1,9 +1,19 @@
+/*!
+ * \class CelestialIn
+ * \file celestialin.h
+ * \brief Bridge between celestialdb class and UI
+ * \authors Steve Silber, Alex Yan
+ * \date 2018-11
+ */
+
+
 #pragma once
 
 #include "bridgein.h"
 #include "telescopeui.h"
 #include "control.h"
 #include "celestialdb.h"
+#include "star.h"
 
 class CelestialIn : public BridgeIn<std::string>
 {
@@ -16,6 +26,7 @@ public:
 		/*
 		 * further modify/transform the pulled values from the ui...
 		 */
+
 	}
 
 
@@ -26,7 +37,7 @@ public:
 	void slot()
 	{
 		auto[object_name] = vs;
-
+		Star(object_name.c_str());
 	}
 
 };

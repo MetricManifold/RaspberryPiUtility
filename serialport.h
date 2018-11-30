@@ -40,25 +40,25 @@ public:
 	SerialPort(char const *port);
 	~SerialPort();
 
-	/*
+	/**
 	 * read the data from the arduino port
-	 * @buffer The data to read from the serial port
-	 * @buf_size The size of the data buffer in bytes
-	 * @returns Integer representing the bytes that have been read in
+	 * @param buffer The data to read from the serial port
+	 * @param buf_size The size of the data buffer in bytes
+	 * @return Integer representing the bytes that have been read in
 	 */
 	int read(char *buffer, unsigned int buf_size) const;
 
-	/*
+	/**
 	 * write the data into the arduio port
-	 * @buffer The data to write into the serial port
-	 * @buf_size The size of the data buffer in bytes
-	 * @returns Whether the write is successful (true) or not (false)
+	 * @param buffer The data to write into the serial port
+	 * @param buf_size The size of the data buffer in bytes
+	 * @return Whether the write is successful (true) or not (false)
 	 */
 	bool write(char *buffer, unsigned int buf_size) const;
 
-	/*
+	/**
 	 * verify the connection is established
-	 * @returns Whether there is a connection (true) or not (false) to port
+	 * @return Whether there is a connection (true) or not (false) to port
 	 */
 	bool has_con() const;
 
