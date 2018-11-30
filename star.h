@@ -10,6 +10,7 @@
 
 #include "downloadpage.h"
 #include "coordinates.h"
+#include "Angle.h"
 
 #include <iostream>
 #include <string>
@@ -35,6 +36,16 @@ public:
 	 */
 	Star(char *name);
 	~Star();
+
+	Angle get_rightasc()
+	{
+		return Angle(rasc.h);
+	}
+
+	Angle get_declination()
+	{
+		return Angle(dec.d);
+	}
 
 private:
 

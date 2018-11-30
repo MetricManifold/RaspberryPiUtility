@@ -95,7 +95,7 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 	*******************************/
 	// Search for star
 	connect(ui.btn_search_star, &QPushButton::clicked, this, [&]() {
-		CelestialIn(this).slot();
+		CelestialIn(object_type::STAR, this).slot();
 
 	});
 

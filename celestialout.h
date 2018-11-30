@@ -8,23 +8,29 @@
 
 #pragma once
 
+#include <string>
+
 #include "bridgeout.h"
 #include "coordinates.h"
+#include "Angle.h"
 
-class CelestialOut : public BridgeOut<rightasc, declination>
+class CelestialOut : public BridgeOut<char *, Angle, Angle>
 {
 public:
 
-	CelestialOut(rightasc ra, declination d)
-		: BridgeOut(ra, d)
+	CelestialOut(char *name, Angle ra, Angle d)
+		: BridgeOut(name, ra, d)
 	{ }
 
 
 	void update()
 	{
-		auto[ra, d] = vs;
-		//printf("yaw/pitch output, '%lf/%lf'\n", yaw, pitch);
+		auto[name, ra, d] = vs;
+		printf("RA/D output, '%lf/%lf'\n", ra.get_degrees(), d.get_degrees());
 
+		w->set_name_dis(name);
+		w->set_rasc_dis(std::to_string(ra.get_degrees()));
+		w->set_dec_dis(std::to_string(d.get_degrees()));
 	}
 };
 

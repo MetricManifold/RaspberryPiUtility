@@ -14,13 +14,15 @@
 #include "control.h"
 #include "celestialdb.h"
 
-class CelestialIn : public BridgeIn<std::string>
+enum class object_type { PLANET, STAR };
+
+class CelestialIn : public BridgeIn<object_type, std::string>
 {
-	using BridgeIn<std::string>::BridgeIn;
+	using BridgeIn<object_type, std::string>::BridgeIn;
 
 public:
-	CelestialIn(TelescopeUI * const w) :
-		BridgeIn(w->get_star_input())
+	CelestialIn(object_type t, TelescopeUI * const w) :
+		BridgeIn(t, w->get_star_input())
 	{
 		/*
 		 * further modify/transform the pulled values from the ui...
@@ -35,8 +37,20 @@ public:
 	 */
 	void slot()
 	{
-		auto[object_name] = vs;
-		Star((char *)object_name.c_str());
+		auto[t, name] = vs;
+		switch (t)
+		{
+		case object_type::PLANET:
+
+
+			break;
+
+		case object_type::STAR:
+
+			CelestialDB::instance().find_star((char *)name.c_str());
+			break;
+
+		}
 	}
 
 };
