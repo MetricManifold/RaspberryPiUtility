@@ -1,3 +1,13 @@
+/*!
+ * \class Star
+ * \file star.h
+ * \brief Part of Celestial Database. Retrives star object from webpage. 
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
+
+
 #pragma once
 
 #include "downloadpage.h"

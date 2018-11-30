@@ -1,3 +1,13 @@
+/*!
+ * \class web
+ * \file downloadpage.h
+ * \brief Implements retrieval of webpage data
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
+
+
 #pragma once
 
 #include <string>
@@ -28,7 +38,7 @@
 
 namespace web
 {
-	/*
+	/**
 	 * given the url of a webpage, it will download the plaintext http contents using
 	 * either linux or windows utilities (based on the compilation system),
 	 * since this waits for http reply, this function is blocking.
@@ -152,7 +162,7 @@ namespace web
 #endif
 	}
 
-	/*
+	/**
 	 * Given the url of a webpage, it will download the plaintext http contents using
 	 * either linux or windows utilities (based on the compilation system),
 	 * since this waits for http reply, this function is blocking.

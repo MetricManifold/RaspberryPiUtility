@@ -1,3 +1,13 @@
+/*!
+ * \class ce  
+ * \file coordencoder.h
+ * \brief Methods for converting coordinates into integers and bytes. 
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
+
+
 #pragma once
 
 #include <utility>

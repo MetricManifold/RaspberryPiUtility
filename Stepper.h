@@ -1,3 +1,13 @@
+/*!
+ * \class Stepper
+ * \file Stepper.h
+ * \brief Part of motor control. Manages stepper motor
+ * \authors Steve Silber, Alex Yan
+ * \date 2018-11
+ */
+
+
+
 #ifndef STEPPER_H
 #define STEPPER_H
 

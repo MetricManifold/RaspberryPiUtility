@@ -1,3 +1,13 @@
+/*!
+ * \class FullStepController
+ * \file FullStepController.h
+ * \brief Implements stepper motor controller
+ * \authors Steve Silber, Alex Yan
+ * \date 2018-11
+ */
+
+
+
 #ifndef FULL_STEP_CONTROLLER_H
 #define FULL_STEP_CONTROLLER_H
 

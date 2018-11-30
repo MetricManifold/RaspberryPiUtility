@@ -21,19 +21,19 @@ public:
 	FakeSerial(FakeSerial const&) = delete;
 	void operator=(FakeSerial const&) = delete;
 
-	/*
+	/**
 	 * read the data from the arduino port
-	 * @buffer The data to read from the serial port
-	 * @buf_size The size of the data buffer in bytes
-	 * @returns Integer representing the bytes that have been read in
+	 * @param buffer The data to read from the serial port
+	 * @param buf_size The size of the data buffer in bytes
+	 * @return Integer representing the bytes that have been read in
 	 */
 	int read(char *buffer, unsigned int buf_size);
 
-	/*
+	/**
 	 * write the data into the arduio port
-	 * @buffer The data to write into the serial port
-	 * @buf_size The size of the data buffer in bytes
-	 * @returns Whether the write is successful (true) or not (false)
+	 * @param buffer The data to write into the serial port
+	 * @param buf_size The size of the data buffer in bytes
+	 * @return Whether the write is successful (true) or not (false)
 	 */
 	bool write(char *buffer, unsigned int buf_size);
 

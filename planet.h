@@ -1,3 +1,12 @@
+/*!
+ * \class Planet
+ * \file planet.h
+ * \brief Part of Celestial database. Retrieves planet object from webpage.
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
+
 #pragma once
 
 #define PLANET_WEBPAGE "https://en.wikipedia.org/wiki/"

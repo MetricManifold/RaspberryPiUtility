@@ -1,3 +1,12 @@
+/*!
+ * \class CelestialIn
+ * \file celestialin.h
+ * \brief Bridge between celestialdb class and UI
+ * \authors Steve Silber, Alex Yan
+ * \date 2018-11
+ */
+
+
 #pragma once
 
 #include "bridgein.h"

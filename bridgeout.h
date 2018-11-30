@@ -1,3 +1,11 @@
+/*!
+ * \class BridgeOut
+ * \file BridgeOut.h
+ * \brief Provides support for Backend classes
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
 #pragma once
 
 #include <tuple>
