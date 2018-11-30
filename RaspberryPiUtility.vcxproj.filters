@@ -64,6 +64,12 @@
     <Filter Include="Header Files\Test">
       <UniqueIdentifier>{0bf512f0-2b79-4d9b-aad6-d0a18bba64ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Back End\Celestial DB">
+      <UniqueIdentifier>{44b351f9-e969-414f-9dd9-e19ed1f5c87f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Bridge\Celestial DB Bridge">
+      <UniqueIdentifier>{4a78be0f-8288-4612-9e63-2635f37e4ac1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -158,6 +164,27 @@
     </ClInclude>
     <ClInclude Include="translation.h">
       <Filter>Header Files\Back End</Filter>
+    </ClInclude>
+    <ClInclude Include="downloadpage.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="celestialdb.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="star.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="planet.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="coordinates.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="celestialin.h">
+      <Filter>Header Files\Bridge\Celestial DB Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="celestialout.h">
+      <Filter>Header Files\Bridge\Celestial DB Bridge</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
