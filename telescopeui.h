@@ -49,11 +49,31 @@ public:
 	 */
 	double get_pitch_input() const;
 	/*!
-	 * \brief Getter method for velocity input from UI
+	 * \brief Getter method for pitch velocity input from UI
 	 * 
 	 * \return double value for velocity
 	 */
-	double TelescopeUI::get_vel_input() const;
+	double TelescopeUI::get_pitch_vel_input() const;
+	/*!
+	 * \brief Getter method for yaw velocity input from UI
+	 *
+	 * \return double value for velocity
+	 */
+	double TelescopeUI::get_yaw_vel_input() const;
+
+	/*!
+	 * \brief Getter method for star name input from UI
+	 * 
+	 * \return string with star name
+	 */
+	std::string TelescopeUI::get_star_input() const;
+
+	/*!
+	 * \brief Getter method for planet name input from UI
+	 *
+	 * \return string with planet name
+	 */
+	std::string TelescopeUI::get_planet_input() const;
 
 
 
@@ -74,17 +94,67 @@ public:
 	void set_pitch_output(double v);
 
 	/*!
-	 * \brief Setter method for displaying velocity on UI 'LCD display'
+	 * \brief Setter method for displaying pitch velocity on UI 'LCD display'
 	 * 
 	 * \param v represents double value for velocity
 	 */
-	void TelescopeUI::set_vel_output(double v);
+	void TelescopeUI::set_pitch_vel_output(double v);
+
+	/*!
+	 * \brief Setter method for displaying yaw velocity on UI 'LCD display'
+	 *
+	 * \param v represents double value for velocity
+	 */
+	void TelescopeUI::set_yaw_vel_output(double v);
 
 	/*!
 	 * \brief Setter method for writing lines to internal UI console
 	 * 
 	 * \param String that contains the line to be displayed on the console
 	 */
-	void append_console(std::string line); 
+	void TelescopeUI::append_console(std::string line); 
+
+	/*!
+	 * \brief Setter method for time display
+	 * 
+	 * \param line contains time as string
+	 */
+	void TelescopeUI::set_time_dis(std::string line);
+
+	/*!
+	 * \brief Setter method  for latitude display
+	 *
+	 * \param line contains latitude as string
+	 */
+	void TelescopeUI::set_lat_dis(std::string line);
+
+	/*!
+	 * \brief Setter method for longitude display
+	 *
+	 * \param line contains longitude as string
+	 */
+	void TelescopeUI::set_long_dis(std::string line);
+
+	/*!
+	 * \brief Setter method for star/planet name display
+	 *
+	 * \param line contains star/name as string
+	 */
+	void TelescopeUI::set_name_dis(std::string line);
+
+	/*!
+	 * \brief Setter method for right ascension display
+	 *
+	 * \param line contains right ascension as string
+	 */
+	void TelescopeUI::set_rasc_dis(std::string line);
+
+	/*!
+	 * \brief Setter method for declination display
+	 *
+	 * \param line contains declination as string
+	 */
+	void TelescopeUI::set_dec_dis(std::string line);
+
 };
 
