@@ -268,6 +268,7 @@ moc_*.h
 moc_*.cpp
 qrc_*.cpp
 ui_*.h
+.metadata
 
 
 
