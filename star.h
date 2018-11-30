@@ -31,6 +31,10 @@ class Star
 	declination dec;	// declination
 
 public:
+	/**
+	 * Construts a new star object by parsing the webpage
+	 * @param name The name of the star
+	 */
 	Star(char *name) : 
 		name{ new char[strlen(name) + 1] }, 
 		url { new char[strlen(STAR_URL) + strlen(name) + 1] }

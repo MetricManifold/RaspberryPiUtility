@@ -31,22 +31,35 @@ std::pair<Angle, Angle> get_planet_rad(Planet &pl)
 		unsigned int hours, 
 		unsigned int minutes) -> double
 	{
-		// declare variables to be used in converting date
-		double julianDate;
-		int I;
-		int J;
-		int K;
+		int 
+			yearp, monthp, 
+			A, B, C, D;
+		if (month == 1 || month == 2)
+		{
+			yearp = year - 1;
+			monthp = month + 12;
+		}
+		else
+		{
+			yearp = year;
+			monthp = month;
+		}
 
-		I = year;
-		J = month;
-		K = day;
 
-		// formula to convert gregorian date to julian date
-		julianDate = K - 32075 + 1461 * (I + 4800 + (J - 14) / 12) / 4 + 367 *
-			(J - 2 - (J - 14) / 12 * 12) * 2 / 12 - 3 * ((I + 4900 + (J - 14) / 12) / 100) / 4;
+		A = yearp / 100.0;
+		B = 2 - A + A / 4.0;
 
-		julianDate += (hours + minutes / 60.0) / 24.0;
-		return julianDate;
+		if (yearp < 0)
+		{
+			C = trunc((365.25 * yearp) - 0.75);
+		}
+		else
+		{
+			C = 365.25 * yearp;
+		}
+		D = 30.6001 * (monthp + 1);
+		double jd = B + C + D + day + 1720994.5 + (hours + minutes / 60.0) / 24.0;
+		return jd;
 	};
 
 
@@ -92,6 +105,7 @@ std::pair<Angle, Angle> get_planet_rad(Planet &pl)
 		(1.25 * pow(pl.e, 2) - 11 / 24 * pow(pl.e, 4)) * sin(2 * M) +
 		(13 / 12 * pow(pl.e, 3) - 43 / 64 * pow(pl.e, 5)) * sin(3 * M) +
 		103 / 96 * pow(pl.e, 4) * sin(4 * M) + 1097 / 960 * pow(pl.e, 5) * sin(5 * M);
+	v = v * (atan(1) * 4) / 180.0;
 
 	/*
 	 * radius vector of the planet

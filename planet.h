@@ -48,8 +48,12 @@ class Planet
 		L;		// mean longitude
 
 public:
+
+	/**
+	 * Creates a planet object using the state variables
+	 */
 	Planet(double i, double o, double p, double a, double n, double e, double L) :
-		i{ i },
+		i{ i * (atan(1) * 4) / 180 },
 		o{ o },
 		p{ p },
 		a{ a },
