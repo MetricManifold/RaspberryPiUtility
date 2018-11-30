@@ -1,3 +1,13 @@
+/*!
+ * \class rightasc, declination 
+ * \file coordinates.h
+ * \brief Structures for equatorial coordinates
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
+
+
 #pragma once
 
 

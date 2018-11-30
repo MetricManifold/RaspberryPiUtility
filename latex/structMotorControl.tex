@@ -1,0 +1,130 @@
+\hypertarget{structMotorControl}{}\section{Motor\+Control Class Reference}
+\label{structMotorControl}\index{Motor\+Control@{Motor\+Control}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMotorControl_acaead1ae076590ce6a403658d94598ab}\label{structMotorControl_acaead1ae076590ce6a403658d94598ab}} 
+{\bfseries Motor\+Control} (\mbox{\hyperlink{structMotorControl}{Motor\+Control}} const \&)=delete
+\item 
+\mbox{\Hypertarget{structMotorControl_a372ffb76326e3ac4fa825ed39536ee08}\label{structMotorControl_a372ffb76326e3ac4fa825ed39536ee08}} 
+void {\bfseries operator=} (\mbox{\hyperlink{structMotorControl}{Motor\+Control}} const \&)=delete
+\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{structMotorControl_ace9edcee1a69c1d56e2af842e2fd3b1a}{read\+\_\+pos}} ()
+\begin{DoxyCompactList}\small\item\em returns the position read in from the serial port, doesn\textquotesingle{}t trigger any pins \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structMotorControl_a16f947c331b12ae98e11f67ae1b4229d}\label{structMotorControl_a16f947c331b12ae98e11f67ae1b4229d}} 
+void \mbox{\hyperlink{structMotorControl_a16f947c331b12ae98e11f67ae1b4229d}{all\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em calls the all stop command by flipping the required pin to H\+I\+GH; this is blocking until activity pin is L\+OW \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structMotorControl_a2027a3374ee4ec606901c77931226e30}{write\+\_\+pos}} (double, double)
+\begin{DoxyCompactList}\small\item\em writes the provided yaw and pitch to the serial port to give the motors a new direction, will not write if the resource is active \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structMotorControl_ae5ed3793c1b3e6f982bf6806ecce3978}{write\+\_\+vel}} (double, double)
+\begin{DoxyCompactList}\small\item\em writes the provided yaw and pitch to the serial port to give the motors a new velocity, will not write if the resource is active \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structMotorControl_a9de35f14006d017df36b62d2c904249c}{is\+\_\+free}} ()
+\begin{DoxyCompactList}\small\item\em returns whether the activity pin is H\+I\+GH or L\+OW \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMotorControl_a7c001c25110ea459918b239f0bbd5801}\label{structMotorControl_a7c001c25110ea459918b239f0bbd5801}} 
+static \mbox{\hyperlink{structMotorControl}{Motor\+Control}} \& {\bfseries get\+\_\+instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMotorControl_ac78d113a124d1de77371c77d7b52fc2f}\label{structMotorControl_ac78d113a124d1de77371c77d7b52fc2f}} 
+\mbox{\hyperlink{classSerialPort}{Serial\+Port}} const {\bfseries serial}
+\item 
+\mbox{\Hypertarget{structMotorControl_ac0acc1ad145c1d1e30a8c335e537ae05}\label{structMotorControl_ac0acc1ad145c1d1e30a8c335e537ae05}} 
+\mbox{\hyperlink{classPin}{Pin}} const {\bfseries ppos}
+\item 
+\mbox{\Hypertarget{structMotorControl_acd2298cf7680cb360aa15d5588ce41cb}\label{structMotorControl_acd2298cf7680cb360aa15d5588ce41cb}} 
+\mbox{\hyperlink{classPin}{Pin}} const {\bfseries pvel}
+\item 
+\mbox{\Hypertarget{structMotorControl_aecda6adda398b0367f44c287cbe7311f}\label{structMotorControl_aecda6adda398b0367f44c287cbe7311f}} 
+\mbox{\hyperlink{classPin}{Pin}} const {\bfseries pstate}
+\item 
+\mbox{\Hypertarget{structMotorControl_a9b9b48901301826eb2b2892c6967bc13}\label{structMotorControl_a9b9b48901301826eb2b2892c6967bc13}} 
+\mbox{\hyperlink{classPin}{Pin}} const {\bfseries pstop}
+\item 
+\mbox{\Hypertarget{structMotorControl_a807d1fe97d6afc0ad367b5ed9c12a7e5}\label{structMotorControl_a807d1fe97d6afc0ad367b5ed9c12a7e5}} 
+std\+::mutex {\bfseries mm}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMotorControl_a039b582e86435db0881e066f0b7a89b8}\label{structMotorControl_a039b582e86435db0881e066f0b7a89b8}} 
+static friend \mbox{\hyperlink{structMotorControl}{Motor\+Control}} \& \mbox{\hyperlink{structMotorControl_a039b582e86435db0881e066f0b7a89b8}{motor\+\_\+driver}} ()
+\begin{DoxyCompactList}\small\item\em let the motor driver function, which returns the state, easily access members from this class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structMotorControl_a9de35f14006d017df36b62d2c904249c}\label{structMotorControl_a9de35f14006d017df36b62d2c904249c}} 
+\index{Motor\+Control@{Motor\+Control}!is\+\_\+free@{is\+\_\+free}}
+\index{is\+\_\+free@{is\+\_\+free}!Motor\+Control@{Motor\+Control}}
+\subsubsection{\texorpdfstring{is\+\_\+free()}{is\_free()}}
+{\footnotesize\ttfamily bool Motor\+Control\+::is\+\_\+free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns whether the activity pin is H\+I\+GH or L\+OW 
+
+\begin{DoxyReturn}{Returns}
+If the activity pin is H\+I\+GH then false, L\+OW then true 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structMotorControl_ace9edcee1a69c1d56e2af842e2fd3b1a}\label{structMotorControl_ace9edcee1a69c1d56e2af842e2fd3b1a}} 
+\index{Motor\+Control@{Motor\+Control}!read\+\_\+pos@{read\+\_\+pos}}
+\index{read\+\_\+pos@{read\+\_\+pos}!Motor\+Control@{Motor\+Control}}
+\subsubsection{\texorpdfstring{read\+\_\+pos()}{read\_pos()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Motor\+Control\+::read\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the position read in from the serial port, doesn\textquotesingle{}t trigger any pins 
+
+\begin{DoxyReturn}{Returns}
+Pair object containing the yaw and pitch, respectively 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structMotorControl_a2027a3374ee4ec606901c77931226e30}\label{structMotorControl_a2027a3374ee4ec606901c77931226e30}} 
+\index{Motor\+Control@{Motor\+Control}!write\+\_\+pos@{write\+\_\+pos}}
+\index{write\+\_\+pos@{write\+\_\+pos}!Motor\+Control@{Motor\+Control}}
+\subsubsection{\texorpdfstring{write\+\_\+pos()}{write\_pos()}}
+{\footnotesize\ttfamily bool Motor\+Control\+::write\+\_\+pos (\begin{DoxyParamCaption}\item[{double}]{yaw,  }\item[{double}]{pitch }\end{DoxyParamCaption})}
+
+
+
+writes the provided yaw and pitch to the serial port to give the motors a new direction, will not write if the resource is active 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & The new yaw position for the telescope \\
+\hline
+{\em pitch} & The new pitch position for the telescope \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the write is successful (true) or not (false) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structMotorControl_ae5ed3793c1b3e6f982bf6806ecce3978}\label{structMotorControl_ae5ed3793c1b3e6f982bf6806ecce3978}} 
+\index{Motor\+Control@{Motor\+Control}!write\+\_\+vel@{write\+\_\+vel}}
+\index{write\+\_\+vel@{write\+\_\+vel}!Motor\+Control@{Motor\+Control}}
+\subsubsection{\texorpdfstring{write\+\_\+vel()}{write\_vel()}}
+{\footnotesize\ttfamily bool Motor\+Control\+::write\+\_\+vel (\begin{DoxyParamCaption}\item[{double}]{yaw,  }\item[{double}]{pitch }\end{DoxyParamCaption})}
+
+
+
+writes the provided yaw and pitch to the serial port to give the motors a new velocity, will not write if the resource is active 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & The new yaw velocity for the telescope \\
+\hline
+{\em pitch} & The new pitch velocity for the telescope \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the write is successful (true) or not (false) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{motorcontrol_8h}{motorcontrol.\+h}}\item 
+motorcontrol.\+cpp\end{DoxyCompactItemize}

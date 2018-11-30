@@ -1,0 +1,71 @@
+Telescope Control System is a C++ program for the Raspberry Pi. The program communicates with a connected Arduino that reorients a telescope. The telescope can be reoriented using the inputted horizontal celestial coordinates from the Qt Interface on the Pi.
+
+\subsection*{Getting Started}
+
+The instructions below will allow you to compile the project and run it on the Raspberry Pi.
+
+\subsubsection*{Prerequisites}
+
+Install the Qt libraries using {\ttfamily apt}\+: 
+\begin{DoxyCode}
+sudo apt install qt5-default
+\end{DoxyCode}
+
+
+\subsubsection*{Installation}
+
+Generate the {\ttfamily Makefile} using the existing project {\ttfamily telescope.\+pro}\+: 
+\begin{DoxyCode}
+qmake telescope.pro
+\end{DoxyCode}
+
+
+Build the program\+: 
+\begin{DoxyCode}
+make
+\end{DoxyCode}
+
+
+\subsection*{Usage}
+
+After installation just run the program from the directory {\ttfamily group25}\+: 
+\begin{DoxyCode}
+./telescope
+\end{DoxyCode}
+
+
+\subsection*{Development}
+
+If you wish to build the program with the files you are developing, edit the {\ttfamily telescope.\+pro} file to include {\ttfamily .h} and {\ttfamily .cpp} files. The {\ttfamily telescope.\+pro} file should look like this\+: 
+\begin{DoxyCode}
+QT += widgets
+
+TEMPLATE = app
+TARGET = telescope
+INCLUDEPATH += .
+
+DEFINES += QT\_DEPRECATED\_WARNINGS
+
+
+# Input
+HEADERS += backendwrapper.h \(\backslash\)
+           telescopeui.h
+FORMS += raspberrypiutility.ui
+SOURCES += backendwrapper.cpp \(\backslash\)
+           main.cpp \(\backslash\)
+           telescopeui.cpp
+RESOURCES += raspberrypiutility.qrc
+\end{DoxyCode}
+
+
+Qt {\ttfamily .ui} files should be appended to {\ttfamily F\+O\+R\+MS}, C++ header {\ttfamily .h} files to {\ttfamily H\+E\+A\+D\+E\+RS}, C++ files {\ttfamily .cpp} to {\ttfamily S\+O\+U\+R\+C\+ES}.
+
+To generate a fresh Qt project file\+: 
+\begin{DoxyCode}
+qmake -project -o telescope.pro
+\end{DoxyCode}
+ Edit {\ttfamily telescope.\+pro} to include\+: 
+\begin{DoxyCode}
+QT += widgets
+\end{DoxyCode}
+ 

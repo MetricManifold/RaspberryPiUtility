@@ -1,0 +1,139 @@
+\hypertarget{classAngle}{}\section{Angle Class Reference}
+\label{classAngle}\index{Angle@{Angle}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAngle_aca3c6e1519b40835d31736430ca082a9}\label{classAngle_aca3c6e1519b40835d31736430ca082a9}} 
+\mbox{\hyperlink{classAngle_aca3c6e1519b40835d31736430ca082a9}{Angle}} ()
+\begin{DoxyCompactList}\small\item\em null constructor method for an \mbox{\hyperlink{classAngle}{Angle}} -- does not create a meaningful \mbox{\hyperlink{classAngle}{Angle}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAngle_a0c77cde78d872c2353b7b583e5928230}{Angle}} (double radians)
+\begin{DoxyCompactList}\small\item\em constructor method for an \mbox{\hyperlink{classAngle}{Angle}} using radians \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAngle_aaddbbb2df503cad123ceec60df3778d7}{Angle}} (double degrees, double arcminutes, double arcseconds)
+\begin{DoxyCompactList}\small\item\em constructor method for an \mbox{\hyperlink{classAngle}{Angle}} using degrees, arcminutes, arcseconds \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAngle_af8f8715184904ea14d1e951be1f8d60c}{get\+\_\+radians}} ()
+\begin{DoxyCompactList}\small\item\em getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in radians \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAngle_a592d871a119dd6470e3af13e76debb07}{get\+\_\+degrees}} ()
+\begin{DoxyCompactList}\small\item\em getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in degrees \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAngle_a2664851f26ad091294ed0dd2737026b2}{get\+\_\+arcminutes}} ()
+\begin{DoxyCompactList}\small\item\em getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in arcminutes \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAngle_a64ecc29aea0d9487058a6bec3f141e54}{get\+\_\+arcseconds}} ()
+\begin{DoxyCompactList}\small\item\em getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in arcseconds \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classAngle_a5425dc27480fec42fb3046378a70920e}{get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds}} ()
+\begin{DoxyCompactList}\small\item\em getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in (degrees, arcminutes, arcseconds) -- (e.\+g. 10 deg 37 arcmin 12.\+32 arcsec) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAngle_a0985c4f08e7c075f29db63e5e313fe1f}\label{classAngle_a0985c4f08e7c075f29db63e5e313fe1f}} 
+double \mbox{\hyperlink{classAngle_a0985c4f08e7c075f29db63e5e313fe1f}{\+\_\+angle\+\_\+radians}}
+\begin{DoxyCompactList}\small\item\em internal representation of the angle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAngle_a0c77cde78d872c2353b7b583e5928230}\label{classAngle_a0c77cde78d872c2353b7b583e5928230}} 
+\index{Angle@{Angle}!Angle@{Angle}}
+\index{Angle@{Angle}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{Angle()}{Angle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Angle\+::\+Angle (\begin{DoxyParamCaption}\item[{double}]{radians }\end{DoxyParamCaption})}
+
+
+
+constructor method for an \mbox{\hyperlink{classAngle}{Angle}} using radians 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radians} & represents the angle in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAngle_aaddbbb2df503cad123ceec60df3778d7}\label{classAngle_aaddbbb2df503cad123ceec60df3778d7}} 
+\index{Angle@{Angle}!Angle@{Angle}}
+\index{Angle@{Angle}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{Angle()}{Angle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Angle\+::\+Angle (\begin{DoxyParamCaption}\item[{double}]{degrees,  }\item[{double}]{arcminutes,  }\item[{double}]{arcseconds }\end{DoxyParamCaption})}
+
+
+
+constructor method for an \mbox{\hyperlink{classAngle}{Angle}} using degrees, arcminutes, arcseconds 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & represents the degree part of the \mbox{\hyperlink{classAngle}{Angle}} \\
+\hline
+{\em arcminutes} & represents the arcminutes part of the \mbox{\hyperlink{classAngle}{Angle}} \\
+\hline
+{\em arcseconds} & represents the arcseconds part of \mbox{\hyperlink{classAngle}{Angle}} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAngle_a2664851f26ad091294ed0dd2737026b2}\label{classAngle_a2664851f26ad091294ed0dd2737026b2}} 
+\index{Angle@{Angle}!get\+\_\+arcminutes@{get\+\_\+arcminutes}}
+\index{get\+\_\+arcminutes@{get\+\_\+arcminutes}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{get\+\_\+arcminutes()}{get\_arcminutes()}}
+{\footnotesize\ttfamily double Angle\+::get\+\_\+arcminutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in arcminutes 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAngle}{Angle}}, measured in arcminutes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAngle_a64ecc29aea0d9487058a6bec3f141e54}\label{classAngle_a64ecc29aea0d9487058a6bec3f141e54}} 
+\index{Angle@{Angle}!get\+\_\+arcseconds@{get\+\_\+arcseconds}}
+\index{get\+\_\+arcseconds@{get\+\_\+arcseconds}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{get\+\_\+arcseconds()}{get\_arcseconds()}}
+{\footnotesize\ttfamily double Angle\+::get\+\_\+arcseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in arcseconds 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAngle}{Angle}}, measured in arcseconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAngle_a592d871a119dd6470e3af13e76debb07}\label{classAngle_a592d871a119dd6470e3af13e76debb07}} 
+\index{Angle@{Angle}!get\+\_\+degrees@{get\+\_\+degrees}}
+\index{get\+\_\+degrees@{get\+\_\+degrees}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{get\+\_\+degrees()}{get\_degrees()}}
+{\footnotesize\ttfamily double Angle\+::get\+\_\+degrees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in degrees 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAngle}{Angle}}, measured in degrees 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAngle_a5425dc27480fec42fb3046378a70920e}\label{classAngle_a5425dc27480fec42fb3046378a70920e}} 
+\index{Angle@{Angle}!get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds@{get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds}}
+\index{get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds@{get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds()}{get\_degrees\_arcminutes\_arcseconds()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Angle\+::get\+\_\+degrees\+\_\+arcminutes\+\_\+arcseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in (degrees, arcminutes, arcseconds) -- (e.\+g. 10 deg 37 arcmin 12.\+32 arcsec) 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAngle}{Angle}}, measured in \char`\"{}degrees\char`\"{}, \char`\"{}arcminutes\char`\"{}, and \char`\"{}arcseconds\char`\"{} (access each component with its respective key) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAngle_af8f8715184904ea14d1e951be1f8d60c}\label{classAngle_af8f8715184904ea14d1e951be1f8d60c}} 
+\index{Angle@{Angle}!get\+\_\+radians@{get\+\_\+radians}}
+\index{get\+\_\+radians@{get\+\_\+radians}!Angle@{Angle}}
+\subsubsection{\texorpdfstring{get\+\_\+radians()}{get\_radians()}}
+{\footnotesize\ttfamily double Angle\+::get\+\_\+radians (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter method for the \mbox{\hyperlink{classAngle}{Angle}}, measured in radians 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAngle}{Angle}}, measured in radians 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Angle_8h}{Angle.\+h}}\item 
+\mbox{\hyperlink{Angle_8cpp}{Angle.\+cpp}}\end{DoxyCompactItemize}

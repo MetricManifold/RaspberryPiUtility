@@ -1,0 +1,212 @@
+\hypertarget{classPin}{}\section{Pin Class Reference}
+\label{classPin}\index{Pin@{Pin}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPin_aaf3d92065cd9b9de91f01164bec418ea}\label{classPin_aaf3d92065cd9b9de91f01164bec418ea}} 
+\mbox{\hyperlink{classPin_aaf3d92065cd9b9de91f01164bec418ea}{Pin}} ()
+\begin{DoxyCompactList}\small\item\em constructor, create a G\+P\+IO object and export \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPin_a580d21a6d49bf1276146b0fab1a6039e}{Pin}} (int)
+\begin{DoxyCompactList}\small\item\em constructor, export with the defined pin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPin_ae09bd2322f5ebbfaf98a379566d88ac0}{Pin}} (int, char $\ast$)
+\begin{DoxyCompactList}\small\item\em constructor, give the direction of the pin too \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPin_a462c14c45d3d653731dde638aa6e7bb7}\label{classPin_a462c14c45d3d653731dde638aa6e7bb7}} 
+\mbox{\hyperlink{classPin_a462c14c45d3d653731dde638aa6e7bb7}{$\sim$\+Pin}} ()
+\begin{DoxyCompactList}\small\item\em destructor, exports the pin \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_a233ab381d3ebab706ca96bc3b78f0927}{export\+\_\+gpio}} ()
+\begin{DoxyCompactList}\small\item\em exports G\+P\+IO \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_ac0010e89c86e30b5e453f223ec591e1f}{unexport\+\_\+gpio}} ()
+\begin{DoxyCompactList}\small\item\em exports G\+P\+IO \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_a40c6f300d3c97b653fb598ca36a8d778}{setdir\+\_\+gpio}} (char $\ast$dir)
+\begin{DoxyCompactList}\small\item\em sets the direction of G\+P\+IO pin, should only be called once \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_a319c0b85b6b667b6708fe501a47c061c}{setval\+\_\+gpio}} (int val) const
+\begin{DoxyCompactList}\small\item\em sets a new value for G\+P\+IO pin \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_a04fc4921bf674049be0d06842709913f}{getval\+\_\+gpio}} (int \&val) const
+\begin{DoxyCompactList}\small\item\em gets G\+P\+IO value \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_a180d487895b4fc270437af97a0428f22}{get\+\_\+gpionum}} () const
+\begin{DoxyCompactList}\small\item\em gets G\+P\+IO pin number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPin_a1ab3312c109c400607d3242f0463941b}{write}} (char $\ast$to, char $\ast$val) const
+\begin{DoxyCompactList}\small\item\em writes the asked value to the asked directory \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPin_a800322aedd71b00ea963876b6628be68}{write}} (char $\ast$to, int val) const
+\begin{DoxyCompactList}\small\item\em writes the asked value to the asked directory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPin_a1e8d9e0fd44e407c7a4ebcfa7f72e199}\label{classPin_a1e8d9e0fd44e407c7a4ebcfa7f72e199}} 
+int const {\bfseries gpionum}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPin_a580d21a6d49bf1276146b0fab1a6039e}\label{classPin_a580d21a6d49bf1276146b0fab1a6039e}} 
+\index{Pin@{Pin}!Pin@{Pin}}
+\index{Pin@{Pin}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{Pin()}{Pin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pin\+::\+Pin (\begin{DoxyParamCaption}\item[{int}]{gpionum }\end{DoxyParamCaption})}
+
+
+
+constructor, export with the defined pin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpionum} & The pin number for this pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPin_ae09bd2322f5ebbfaf98a379566d88ac0}\label{classPin_ae09bd2322f5ebbfaf98a379566d88ac0}} 
+\index{Pin@{Pin}!Pin@{Pin}}
+\index{Pin@{Pin}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{Pin()}{Pin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pin\+::\+Pin (\begin{DoxyParamCaption}\item[{int}]{gpionum,  }\item[{char $\ast$}]{dir }\end{DoxyParamCaption})}
+
+
+
+constructor, give the direction of the pin too 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpionum} & The pin number for this pin \\
+\hline
+{\em dir} & The direction for this pin \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPin_a233ab381d3ebab706ca96bc3b78f0927}\label{classPin_a233ab381d3ebab706ca96bc3b78f0927}} 
+\index{Pin@{Pin}!export\+\_\+gpio@{export\+\_\+gpio}}
+\index{export\+\_\+gpio@{export\+\_\+gpio}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{export\+\_\+gpio()}{export\_gpio()}}
+{\footnotesize\ttfamily int Pin\+::export\+\_\+gpio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+exports G\+P\+IO 
+
+\begin{DoxyReturn}{Returns}
+Whether the export succeeded (1) or failed (0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_a180d487895b4fc270437af97a0428f22}\label{classPin_a180d487895b4fc270437af97a0428f22}} 
+\index{Pin@{Pin}!get\+\_\+gpionum@{get\+\_\+gpionum}}
+\index{get\+\_\+gpionum@{get\+\_\+gpionum}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{get\+\_\+gpionum()}{get\_gpionum()}}
+{\footnotesize\ttfamily int Pin\+::get\+\_\+gpionum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets G\+P\+IO pin number 
+
+\begin{DoxyReturn}{Returns}
+The pin number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_a04fc4921bf674049be0d06842709913f}\label{classPin_a04fc4921bf674049be0d06842709913f}} 
+\index{Pin@{Pin}!getval\+\_\+gpio@{getval\+\_\+gpio}}
+\index{getval\+\_\+gpio@{getval\+\_\+gpio}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{getval\+\_\+gpio()}{getval\_gpio()}}
+{\footnotesize\ttfamily int Pin\+::getval\+\_\+gpio (\begin{DoxyParamCaption}\item[{int \&}]{val }\end{DoxyParamCaption}) const}
+
+
+
+gets G\+P\+IO value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The integer to print the output to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the get succeeded (1) or failed (0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_a40c6f300d3c97b653fb598ca36a8d778}\label{classPin_a40c6f300d3c97b653fb598ca36a8d778}} 
+\index{Pin@{Pin}!setdir\+\_\+gpio@{setdir\+\_\+gpio}}
+\index{setdir\+\_\+gpio@{setdir\+\_\+gpio}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{setdir\+\_\+gpio()}{setdir\_gpio()}}
+{\footnotesize\ttfamily int Pin\+::setdir\+\_\+gpio (\begin{DoxyParamCaption}\item[{char $\ast$}]{dir }\end{DoxyParamCaption})}
+
+
+
+sets the direction of G\+P\+IO pin, should only be called once 
+
+\begin{DoxyReturn}{Returns}
+Whether the direction setting succeeded (1) or failed (0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_a319c0b85b6b667b6708fe501a47c061c}\label{classPin_a319c0b85b6b667b6708fe501a47c061c}} 
+\index{Pin@{Pin}!setval\+\_\+gpio@{setval\+\_\+gpio}}
+\index{setval\+\_\+gpio@{setval\+\_\+gpio}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{setval\+\_\+gpio()}{setval\_gpio()}}
+{\footnotesize\ttfamily int Pin\+::setval\+\_\+gpio (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption}) const}
+
+
+
+sets a new value for G\+P\+IO pin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value to set the G\+P\+IO to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the export succeeded (1) or failed (0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_ac0010e89c86e30b5e453f223ec591e1f}\label{classPin_ac0010e89c86e30b5e453f223ec591e1f}} 
+\index{Pin@{Pin}!unexport\+\_\+gpio@{unexport\+\_\+gpio}}
+\index{unexport\+\_\+gpio@{unexport\+\_\+gpio}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{unexport\+\_\+gpio()}{unexport\_gpio()}}
+{\footnotesize\ttfamily int Pin\+::unexport\+\_\+gpio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+exports G\+P\+IO 
+
+\begin{DoxyReturn}{Returns}
+Whether the export succeeded (1) or failed (0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_a1ab3312c109c400607d3242f0463941b}\label{classPin_a1ab3312c109c400607d3242f0463941b}} 
+\index{Pin@{Pin}!write@{write}}
+\index{write@{write}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Pin\+::write (\begin{DoxyParamCaption}\item[{char $\ast$}]{to,  }\item[{char $\ast$}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+writes the asked value to the asked directory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to} & The directory and file to write to \\
+\hline
+{\em val} & The given value to write into the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the write was successful (1) or not (0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPin_a800322aedd71b00ea963876b6628be68}\label{classPin_a800322aedd71b00ea963876b6628be68}} 
+\index{Pin@{Pin}!write@{write}}
+\index{write@{write}!Pin@{Pin}}
+\subsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Pin\+::write (\begin{DoxyParamCaption}\item[{char $\ast$}]{to,  }\item[{int}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+writes the asked value to the asked directory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to} & The directory and file to write to \\
+\hline
+{\em val} & The given value to write into the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the write was successful (1) or not (0) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gpio_8h}{gpio.\+h}}\item 
+gpio.\+cpp\end{DoxyCompactItemize}

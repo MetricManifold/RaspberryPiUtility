@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['serialport',['SerialPort',['../classSerialPort.html',1,'']]],
+  ['serialport_2eh',['serialport.h',['../serialport_8h.html',1,'']]],
+  ['set_5faltitude',['set_altitude',['../classHorizontalCoordinates.html#a2112ee5b54653ca30712b7fa4a17482d',1,'HorizontalCoordinates']]],
+  ['set_5fazimuth',['set_azimuth',['../classHorizontalCoordinates.html#a05fb79f9470d72b9e895c2cb7e10da94',1,'HorizontalCoordinates']]],
+  ['set_5fdec_5fdis',['set_dec_dis',['../classTelescopeUI.html#a783632af5cec9a781f0228204b7d4126',1,'TelescopeUI']]],
+  ['set_5fdeclination',['set_declination',['../classEquatorialCoordinates.html#ad3136302cdf4904010f22407071aa722',1,'EquatorialCoordinates']]],
+  ['set_5flat_5fdis',['set_lat_dis',['../classTelescopeUI.html#aaf63d404f0d3ca0aaa53d8319255ac32',1,'TelescopeUI']]],
+  ['set_5flong_5fdis',['set_long_dis',['../classTelescopeUI.html#a17bbaf5bd8d520f6db7ccff5d20e2b15',1,'TelescopeUI']]],
+  ['set_5fname_5fdis',['set_name_dis',['../classTelescopeUI.html#ae2e354a53baf9ad21263e0123b47785a',1,'TelescopeUI']]],
+  ['set_5fpitch_5foutput',['set_pitch_output',['../classTelescopeUI.html#a4388ce748e1ad31dbb5d9d4df38c750b',1,'TelescopeUI']]],
+  ['set_5fpitch_5fvel_5foutput',['set_pitch_vel_output',['../classTelescopeUI.html#a3d767f297da01b6cb685578ed2479e25',1,'TelescopeUI']]],
+  ['set_5frasc_5fdis',['set_rasc_dis',['../classTelescopeUI.html#a9af61f40fd39d3c22ecd349a038ef2b5',1,'TelescopeUI']]],
+  ['set_5fright_5fascension',['set_right_ascension',['../classEquatorialCoordinates.html#ad6eac3da25d92a4e6c52f920d825ed43',1,'EquatorialCoordinates']]],
+  ['set_5ftime_5fdis',['set_time_dis',['../classTelescopeUI.html#aa4bddc57881d00dd145312c84467ac1d',1,'TelescopeUI']]],
+  ['set_5fvelocity',['set_velocity',['../control_8h.html#a41f34fdf6f02923fbdef84fd40bc19be',1,'tmc']]],
+  ['set_5fyaw_5foutput',['set_yaw_output',['../classTelescopeUI.html#ac228bd23c7e759df5aa81206872214b5',1,'TelescopeUI']]],
+  ['set_5fyaw_5fvel_5foutput',['set_yaw_vel_output',['../classTelescopeUI.html#aa606620872e1d9402b74c26664d12c3d',1,'TelescopeUI']]],
+  ['setdir_5fgpio',['setdir_gpio',['../classPin.html#a40c6f300d3c97b653fb598ca36a8d778',1,'Pin']]],
+  ['setval_5fgpio',['setval_gpio',['../classPin.html#a319c0b85b6b667b6708fe501a47c061c',1,'Pin']]],
+  ['star',['Star',['../classStar.html',1,'']]],
+  ['star_2eh',['star.h',['../star_8h.html',1,'']]],
+  ['stepper',['Stepper',['../classStepper.html',1,'']]],
+  ['stepper_2eh',['Stepper.h',['../Stepper_8h.html',1,'']]],
+  ['stop',['stop',['../control_8h.html#af21f73ad3fc6aaafe7d0e4e9127fe02d',1,'tmc']]]
+];

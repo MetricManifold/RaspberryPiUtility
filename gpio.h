@@ -29,82 +29,82 @@ class Pin
 {
 public:
 
-	/*
+	/**
 	 * constructor, create a GPIO object and export
 	 */
 	Pin();
 
-	/*
+	/**
 	 * constructor, export with the defined pin
 	 * @param gpionum The pin number for this pin
 	 */
 	Pin(int);
 
-	/*
+	/**
 	 * constructor, give the direction of the pin too
 	 * @param gpionum The pin number for this pin
 	 * @param dir The direction for this pin
 	 */
 	Pin(int, char *);
 
-	/*
+	/**
 	 * destructor, exports the pin
 	 */
 	~Pin() { unexport_gpio(); }
 
-	/*
+	/**
 	 * exports GPIO
-	 * @returns Whether the export succeeded (1) or failed (0)
+	 * @return Whether the export succeeded (1) or failed (0)
 	 */
 	int export_gpio();
 
-	/*
+	/**
 	 * exports GPIO
-	 * @returns Whether the export succeeded (1) or failed (0)
+	 * @return Whether the export succeeded (1) or failed (0)
 	 */
 	int unexport_gpio();
 
-	/*
+	/**
 	 * sets the direction of GPIO pin, should only be called once
-	 * @returns Whether the direction setting succeeded (1) or failed (0)
+	 * @return Whether the direction setting succeeded (1) or failed (0)
 	 */
 	int setdir_gpio(char * dir);
 
-	/*
+	/**
 	 * sets a new value for GPIO pin
 	 * @param val The value to set the GPIO to
-	 * @returns Whether the export succeeded (1) or failed (0)
+	 * @return Whether the export succeeded (1) or failed (0)
 	 */
 	int setval_gpio(int val) const;
 
-	/*
+	/**
 	 * gets GPIO value
-	 * @value The integer to print the output to
-	 * @returns Whether the get succeeded (1) or failed (0)
+	 * @param value The integer to print the output to
+	 * @return Whether the get succeeded (1) or failed (0)
 	 */
 	int getval_gpio(int& val) const;
 
-	/*
+	/**
 	 * gets GPIO pin number
-	 * @returns The pin number
+	 * @return The pin number
 	 */
 	int get_gpionum() const;
 
 private:
 
-	/*
+	/**
 	 * writes the asked value to the asked directory
 	 * @param to The directory and file to write to
 	 * @param val The given value to write into the file
-	 * @returns Whether the write was successful (1) or not (0)
+	 * @return Whether the write was successful (1) or not (0)
 	 */
 	int write(char * to, char * val) const;
 
-	/*
+	/**
 	 * writes the asked value to the asked directory
 	 * @param to The directory and file to write to
 	 * @param val The given value to write into the file
-	 * @returns Whether the write was successful (1) or not (0)
+	 * @return Whether the write was successful (1) or not (0)
 	 */
 	int write(char * to, int val) const;
 

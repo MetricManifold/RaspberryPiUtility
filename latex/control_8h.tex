@@ -1,0 +1,109 @@
+\hypertarget{control_8h}{}\section{control.\+h File Reference}
+\label{control_8h}\index{control.\+h@{control.\+h}}
+
+
+the A\+PI for the Telescope Motor Control there is no function to read the current coordinates as the design does not allow the motor control to be polled  
+
+
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}motorcontrol.\+h\char`\"{}}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{control_8h_a01df60c309a1b5500cc9d7c732ff3912}\label{control_8h_a01df60c309a1b5500cc9d7c732ff3912}} 
+typedef double {\bfseries Degree}
+\item 
+\mbox{\Hypertarget{control_8h_a2cd3f46402e6c41c2d013b9184cae4a6}\label{control_8h_a2cd3f46402e6c41c2d013b9184cae4a6}} 
+typedef double {\bfseries Real\+Angle}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T  = decltype(\+\_\+\+\_\+no\+\_\+fn), typename ... Args$>$ }\\bool \mbox{\hyperlink{control_8h_a2697c723984cc0200677b73f7ac16ff5}{tmc\+::to\+\_\+coords}} (Degree yaw, Degree pitch, T end\+\_\+fn=\+\_\+\+\_\+no\+\_\+fn, Args ...fn\+\_\+args)
+\begin{DoxyCompactList}\small\item\em takes a pair of coordinates as a destination to move the telescope to returns the coordinates before initiating the move this function is N\+O\+N\+B\+L\+O\+C\+K\+I\+NG \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T  = decltype(\+\_\+\+\_\+no\+\_\+fn), typename ... Args$>$ }\\bool \mbox{\hyperlink{control_8h_a41f34fdf6f02923fbdef84fd40bc19be}{tmc\+::set\+\_\+velocity}} (Degree yaw, Degree pitch, T end\+\_\+fn=\+\_\+\+\_\+no\+\_\+fn, Args ...fn\+\_\+args)
+\begin{DoxyCompactList}\small\item\em takes a pair of velocity coordinates, which will persistently move the telescope until stop is called or end of freedom of motion is reached returns the coordinates before initiating the translation this function is N\+O\+N\+B\+L\+O\+C\+K\+I\+NG \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{control_8h_aaa1bc8395514b80a9fc58b7f122d94b6}\label{control_8h_aaa1bc8395514b80a9fc58b7f122d94b6}} 
+std\+::pair$<$ Degree, Degree $>$ {\bfseries tmc\+::get\+\_\+coords} ()
+\item 
+{\footnotesize template$<$typename T  = decltype(\+\_\+\+\_\+no\+\_\+fn), typename ... Args$>$ }\\std\+::pair$<$ double, double $>$ \mbox{\hyperlink{control_8h_af21f73ad3fc6aaafe7d0e4e9127fe02d}{tmc\+::stop}} (T on\+\_\+stop)
+\begin{DoxyCompactList}\small\item\em calls an all stop on the telescope movement, if the telescope isn\textquotesingle{}t moving, there is no effect \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{control_8h_a44f6d174372cad3b4035dc5ff8941d4a}\label{control_8h_a44f6d174372cad3b4035dc5ff8941d4a}} 
+static void($\ast$ {\bfseries \+\_\+\+\_\+no\+\_\+fn} )() = \mbox{[}$\,$\mbox{]}() \{\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the A\+PI for the Telescope Motor Control there is no function to read the current coordinates as the design does not allow the motor control to be polled 
+
+\begin{DoxyAuthor}{Authors}
+Steve Silber, Alex Yan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018-\/11 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{control_8h_file_a41f34fdf6f02923fbdef84fd40bc19be}\label{control_8h_file_a41f34fdf6f02923fbdef84fd40bc19be}} 
+\index{control.\+h@{control.\+h}!set\+\_\+velocity@{set\+\_\+velocity}}
+\index{set\+\_\+velocity@{set\+\_\+velocity}!control.\+h@{control.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+velocity()}{set\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T  = decltype(\+\_\+\+\_\+no\+\_\+fn), typename ... Args$>$ \\
+bool tmc\+::set\+\_\+velocity (\begin{DoxyParamCaption}\item[{Degree}]{yaw,  }\item[{Degree}]{pitch,  }\item[{T}]{end\+\_\+fn = {\ttfamily \+\_\+\+\_\+no\+\_\+fn},  }\item[{Args ...}]{fn\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+takes a pair of velocity coordinates, which will persistently move the telescope until stop is called or end of freedom of motion is reached returns the coordinates before initiating the translation this function is N\+O\+N\+B\+L\+O\+C\+K\+I\+NG 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & The yaw value to act as speed in horizontal direction \\
+\hline
+{\em pitch} & The pitch value to act as speed in vertical direction \\
+\hline
+{\em end\+\_\+fn} & The function that\textquotesingle{}s called when the motor activity finishes \\
+\hline
+{\em fn\+\_\+args} & Arguments passed to the end\+\_\+fn function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{control_8h_file_af21f73ad3fc6aaafe7d0e4e9127fe02d}\label{control_8h_file_af21f73ad3fc6aaafe7d0e4e9127fe02d}} 
+\index{control.\+h@{control.\+h}!stop@{stop}}
+\index{stop@{stop}!control.\+h@{control.\+h}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily template$<$typename T  = decltype(\+\_\+\+\_\+no\+\_\+fn), typename ... Args$>$ \\
+std\+::pair$<$double, double$>$ tmc\+::stop (\begin{DoxyParamCaption}\item[{T}]{on\+\_\+stop }\end{DoxyParamCaption})}
+
+
+
+calls an all stop on the telescope movement, if the telescope isn\textquotesingle{}t moving, there is no effect 
+
+\begin{DoxyReturn}{Returns}
+the coordinates after stopping returning the coordinates means that a stop command could be B\+L\+O\+C\+K\+I\+NG 
+\end{DoxyReturn}
+\mbox{\Hypertarget{control_8h_file_a2697c723984cc0200677b73f7ac16ff5}\label{control_8h_file_a2697c723984cc0200677b73f7ac16ff5}} 
+\index{control.\+h@{control.\+h}!to\+\_\+coords@{to\+\_\+coords}}
+\index{to\+\_\+coords@{to\+\_\+coords}!control.\+h@{control.\+h}}
+\subsubsection{\texorpdfstring{to\+\_\+coords()}{to\_coords()}}
+{\footnotesize\ttfamily template$<$typename T  = decltype(\+\_\+\+\_\+no\+\_\+fn), typename ... Args$>$ \\
+bool tmc\+::to\+\_\+coords (\begin{DoxyParamCaption}\item[{Degree}]{yaw,  }\item[{Degree}]{pitch,  }\item[{T}]{end\+\_\+fn = {\ttfamily \+\_\+\+\_\+no\+\_\+fn},  }\item[{Args ...}]{fn\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+takes a pair of coordinates as a destination to move the telescope to returns the coordinates before initiating the move this function is N\+O\+N\+B\+L\+O\+C\+K\+I\+NG 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & The yaw value to act as new position in horizontal direction \\
+\hline
+{\em pitch} & The pitch value to act as new position in vertical direction \\
+\hline
+{\em end\+\_\+fn} & The function that\textquotesingle{}s called when the motor activity finishes \\
+\hline
+{\em fn\+\_\+args} & Arguments passed to the end\+\_\+fn function \\
+\hline
+\end{DoxyParams}

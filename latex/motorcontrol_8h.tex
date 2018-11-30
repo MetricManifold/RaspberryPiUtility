@@ -1,0 +1,43 @@
+\hypertarget{motorcontrol_8h}{}\section{motorcontrol.\+h File Reference}
+\label{motorcontrol_8h}\index{motorcontrol.\+h@{motorcontrol.\+h}}
+
+
+the \mbox{\hyperlink{structMotorControl}{Motor\+Control}} class acts as the driver interface; it ensures incoming and outgoing data is normalized and within range before it is injested by the driver.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}serialport.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fakeserial.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}coordencoder.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{structMotorControl}{Motor\+Control}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motorcontrol_8h_a61616a44bcf0388d19fb27bde28ad4aa}\label{motorcontrol_8h_a61616a44bcf0388d19fb27bde28ad4aa}} 
+\#define {\bfseries B\+A\+D\+\_\+\+R\+E\+AD}~(std\+::pair\{ -\/1.\+0, -\/1.\+0 \})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motorcontrol_8h_a645db9954217e77b9f047b160e93139b}\label{motorcontrol_8h_a645db9954217e77b9f047b160e93139b}} 
+static \mbox{\hyperlink{structMotorControl}{Motor\+Control}} \& {\bfseries motor\+\_\+driver} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the \mbox{\hyperlink{structMotorControl}{Motor\+Control}} class acts as the driver interface; it ensures incoming and outgoing data is normalized and within range before it is injested by the driver. 
+
+\begin{DoxyAuthor}{Authors}
+Steve Silber, Alex Yan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018-\/11 
+\end{DoxyDate}
