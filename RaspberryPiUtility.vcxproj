@@ -116,11 +116,14 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Angle.cpp" />
     <ClCompile Include="backendwrapper.cpp" />
     <ClCompile Include="bridgein.cpp" />
     <ClCompile Include="bridgeout.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="coordencoder.cpp" />
+    <ClCompile Include="EquatorialCoordinates.cpp" />
+    <ClCompile Include="HorizontalCoordinates.cpp" />
     <ClCompile Include="motorcontrol.cpp" />
     <ClCompile Include="controlin.cpp" />
     <ClCompile Include="controlout.cpp" />
@@ -138,6 +141,7 @@
     <QtRcc Include="raspberrypiutility.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Angle.h" />
     <ClInclude Include="backendwrapper.h" />
     <ClInclude Include="bridgein.h" />
     <ClInclude Include="bridgeout.h" />
@@ -148,7 +152,9 @@
     <ClInclude Include="coordencoder.h" />
     <ClInclude Include="coordinates.h" />
     <ClInclude Include="downloadpage.h" />
+    <ClInclude Include="EquatorialCoordinates.h" />
     <ClInclude Include="fakeserial.h" />
+    <ClInclude Include="HorizontalCoordinates.h" />
     <ClInclude Include="planet.h" />
     <ClInclude Include="star.h" />
     <ClInclude Include="motorcontrol.h" />

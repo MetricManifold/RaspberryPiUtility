@@ -9,7 +9,7 @@
 #define STAR_HOST_NAME "www.stellar-database.com"
 #define STAR_URL "Scripts/search_star.exe?Name="
 #define STAR_ID "star"
-#define STAR_FMT "%s %dh %dm %lfs,  %f"
+#define STAR_FMT STAR_ID " " RIGHT_ASC_FMT " " DECLINATION_FMT
 #define HTTP_READ_FMT "</B> %dh%dm%lfs, %d&deg;%d'%lf\""
 
 class Star
@@ -77,7 +77,7 @@ public:
 private:
 	void print_info(FILE *f)
 	{
-
+		fprintf(f, STAR_FMT, rasc.h, rasc.m, rasc.s, dec.d, dec.am, dec.as);
 	}
 
 };

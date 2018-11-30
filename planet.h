@@ -9,9 +9,9 @@
 #include <iostream>
 #include <string>
 
-#define STAR_HOST_NAME "www.stellar-database.com"
-#define STAR_URL "Scripts/search_star.exe?Name="
-#define STAR_ID "star"
+#define STAR_HOST_NAME "www.wikipedia.com"
+#define STAR_URL "wiki/"
+#define STAR_ID "planet"
 #define STAR_FMT "%s %dh %dm %lfs,  %f"
 #define HTTP_READ_FMT "</B> %dh%dm%lfs, %d&deg;%d'%lf\""
 
