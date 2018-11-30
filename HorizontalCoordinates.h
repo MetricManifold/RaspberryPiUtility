@@ -55,7 +55,7 @@ public:
 	 * \param local_sidereal_time represents the current local sidereal time as an Angle
 	 * \return the same celestial coordinates, represented in the equatorial system
 	 */
-	EquatorialCoordinates get_equatorial(Angle latitude, Angle longitude, Angle local_sidereal_time);
+	//EquatorialCoordinates get_equatorial(Angle latitude, Angle longitude, Angle local_sidereal_time);
 
 private:
 	Angle _altitude;  ///< internal representation of the altitude

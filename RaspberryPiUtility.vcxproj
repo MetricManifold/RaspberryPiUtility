@@ -156,6 +156,7 @@
     <ClInclude Include="fakeserial.h" />
     <ClInclude Include="HorizontalCoordinates.h" />
     <ClInclude Include="planet.h" />
+    <ClInclude Include="planetrad.h" />
     <ClInclude Include="star.h" />
     <ClInclude Include="motorcontrol.h" />
     <ClInclude Include="controlin.h" />

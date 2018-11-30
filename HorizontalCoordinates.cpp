@@ -70,6 +70,7 @@ void HorizontalCoordinates::set_azimuth(Angle azimuth)
  * \param local_sidereal_time represents the current local sidereal time as an Angle
  * \return the same celestial coordinates, represented in the equatorial system
  */
+/*
 EquatorialCoordinates HorizontalCoordinates::get_equatorial(Angle latitude, Angle longitude, Angle local_sidereal_time)
 {
 	//for convenience, let's use radians
@@ -88,3 +89,5 @@ EquatorialCoordinates HorizontalCoordinates::get_equatorial(Angle latitude, Angl
 
 	return EquatorialCoordinates(Angle(right_ascension), Angle(declination));
 }
+*/
+
