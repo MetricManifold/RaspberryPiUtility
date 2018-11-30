@@ -76,6 +76,12 @@
     <Filter Include="Header Files\Back End\Translation">
       <UniqueIdentifier>{602a73a6-52cb-4471-911b-6696bf6b3c01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Bridge\Celestial DB Bridge">
+      <UniqueIdentifier>{7c6b180f-7c8a-4893-a4a4-bab976474bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Back End\Celestial DB">
+      <UniqueIdentifier>{cd48f740-4527-48ac-9cac-a77aa8956b21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -128,6 +134,21 @@
     </ClCompile>
     <ClCompile Include="Angle.cpp">
       <Filter>Source Files\Back End\Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="celestialin.cpp">
+      <Filter>Source Files\Bridge\Celestial DB Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="celestialout.cpp">
+      <Filter>Source Files\Bridge\Celestial DB Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="downloadpage.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
+    </ClCompile>
+    <ClCompile Include="celestialdb.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
+    </ClCompile>
+    <ClCompile Include="star.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

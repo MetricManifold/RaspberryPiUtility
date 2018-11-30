@@ -6,10 +6,7 @@
  * \date 2018-11
  */
 
-
-
 #pragma once
-
 
 #define RIGHT_ASC_FMT "%dh%dm%lfs"
 #define DECLINATION_FMT "%d*%d'%lf"

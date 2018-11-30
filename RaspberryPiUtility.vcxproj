@@ -120,8 +120,12 @@
     <ClCompile Include="backendwrapper.cpp" />
     <ClCompile Include="bridgein.cpp" />
     <ClCompile Include="bridgeout.cpp" />
+    <ClCompile Include="celestialdb.cpp" />
+    <ClCompile Include="celestialin.cpp" />
+    <ClCompile Include="celestialout.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="coordencoder.cpp" />
+    <ClCompile Include="downloadpage.cpp" />
     <ClCompile Include="EquatorialCoordinates.cpp" />
     <ClCompile Include="HorizontalCoordinates.cpp" />
     <ClCompile Include="motorcontrol.cpp" />
@@ -131,6 +135,7 @@
     <ClCompile Include="gpio.cpp" />
     <ClCompile Include="serialport.cpp" />
     <ClCompile Include="fakeserial.cpp" />
+    <ClCompile Include="star.cpp" />
     <ClCompile Include="telescopeui.cpp" />
     <ClCompile Include="translation.cpp" />
   </ItemGroup>

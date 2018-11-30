@@ -13,7 +13,6 @@
 #include "telescopeui.h"
 #include "control.h"
 #include "celestialdb.h"
-#include "star.h"
 
 class CelestialIn : public BridgeIn<std::string>
 {
@@ -21,7 +20,7 @@ class CelestialIn : public BridgeIn<std::string>
 
 public:
 	CelestialIn(TelescopeUI * const w) :
-		BridgeIn("")
+		BridgeIn(w->get_star_input())
 	{
 		/*
 		 * further modify/transform the pulled values from the ui...
@@ -37,7 +36,7 @@ public:
 	void slot()
 	{
 		auto[object_name] = vs;
-		Star(object_name.c_str());
+		Star((char *)object_name.c_str());
 	}
 
 };

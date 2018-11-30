@@ -11,6 +11,8 @@
 #include "telescopeui.h"
 #include "controlin.h"
 #include "controlout.h"
+#include "celestialin.h"
+#include "celestialout.h"
 
 /*!
  * \brief Implementation of main constructor for RaspberryPiUtility. Creates an instance of the Qt UI template, forming the UI for TelescopeControl. 
@@ -25,6 +27,9 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 
 	ControlIn::init(b);
 	ControlOut::init(this);
+
+	//CelestialIn::init(b);
+	CelestialOut::init(this);
 
 	
 	// Upon selecting file->exit, terminate program
@@ -90,11 +95,12 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 	*******************************/
 	// Search for star
 	connect(ui.btn_search_star, &QPushButton::clicked, this, [&]() {
+		CelestialIn(this).slot();
 
 	});
 
 	// Search for planet
-	connect(ui.btn_search_star, &QPushButton::clicked, this, [&]() {
+	connect(ui.btn_search_planet, &QPushButton::clicked, this, [&]() {
 
 	});
 

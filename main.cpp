@@ -6,7 +6,6 @@
 
 #include "telescopeui.h"
 #include "backendwrapper.h"
-#include "star.h"
 #include "planetrad.h"
 
 #include <QtWidgets/QApplication>
@@ -29,11 +28,6 @@ int main(int argc, char *argv[])
 	TelescopeUI w(&b);
 
 	printf("initialized program\n");
-	
-	Star s("alpha centauri");
-	Star s2("vega");
-	Star t("Betelgeuse");
-
 
 	static Planet Mars{
 		1.8496,

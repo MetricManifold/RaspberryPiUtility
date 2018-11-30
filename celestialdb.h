@@ -10,7 +10,12 @@
 
 #include <iostream>
 
+#include "star.h"
+
 struct CelestialDB
 {
-	
+	bool find_star(char *name)
+	{
+		return true;
+	}
 };

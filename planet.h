@@ -9,8 +9,6 @@
 
 #pragma once
 
-#define PLANET_WEBPAGE "https://en.wikipedia.org/wiki/"
-
 #include <iostream>
 #include <string>
 
