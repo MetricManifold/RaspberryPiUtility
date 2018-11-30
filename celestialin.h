@@ -27,11 +27,6 @@ public:
 	{
 		auto[object_name] = vs;
 
-		tmc::to_coords(yaw, pitch);
-		printf("yaw/pitch input, '%lf/%lf'\n", yaw, pitch);
-
-		auto[ryaw, rpitch] = tmc::get_coords();
-		ControlOut(ryaw, rpitch).update();
 	}
 
 };
