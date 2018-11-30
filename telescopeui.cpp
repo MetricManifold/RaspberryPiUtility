@@ -54,6 +54,32 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 
 	});
 
+	// Upon pushing 'Set' velocity button send velocity setting to control
+	connect(ui.bten_set_vel, &QPushButton::clicked, this, [&]() {
+
+		double vel = this->get_vel_input();
+
+		// Send data to Qt console
+		std::stringstream ss; 
+		ss << "Setting velocity=" << vel;
+		this->append_console(ss.str());
+
+		// As placeholder, we're displaying input values directly
+		this->set_vel_output(vel);
+	});
+
+	// Upon pushing 'stop' button, set velocity to zero, effectively stopping the telescope.
+	connect(ui.btn_stop_vel, &QPushButton::clicked, this, [&]() {
+		
+		// Send data to Qt console
+		this->append_console("Stopping Telescope! Tracking cancelled.");
+	});
+
+	// Upon selecting file->exit, terminate program
+	connect(ui.actionExit, &QAction::triggered, this, [&]() {
+		QApplication::quit();
+	});
+
 	
 
 }
@@ -77,6 +103,15 @@ double TelescopeUI::get_pitch_input() const
 }
 
 /*!
+ * \brief Getter method for velocity input from UI
+ * 
+ * \return double value for velocity
+ */
+double TelescopeUI::get_vel_input() const {
+	return ui.vel_input->value();
+}
+
+/*!
 * \brief Setter method for displaying yaw on UI 'LCD display'
 *
 * \param v represents double value for yaw
@@ -95,6 +130,16 @@ void TelescopeUI::set_pitch_output(double v)
 {
 	ui.pitch_dis->display(v);
 }
+
+/*!
+ * \brief Setter method for displaying velocity on UI 'LCD display'
+ *
+ * \param v represents double value for velocity
+ */
+void TelescopeUI::set_vel_output(double v) {
+	ui.velocity_dis->display(v);
+}
+
 
 /*!
 * \brief Setter method for writing lines to internal UI console

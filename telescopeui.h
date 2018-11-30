@@ -48,6 +48,12 @@ public:
 	 * \return double value for pitch
 	 */
 	double get_pitch_input() const;
+	/*!
+	 * \brief Getter method for velocity input from UI
+	 * 
+	 * \return double value for velocity
+	 */
+	double TelescopeUI::get_vel_input() const;
 
 
 
@@ -66,6 +72,13 @@ public:
 	 * \param v represents double value for pitch
 	 */
 	void set_pitch_output(double v);
+
+	/*!
+	 * \brief Setter method for displaying velocity on UI 'LCD display'
+	 * 
+	 * \param v represents double value for velocity
+	 */
+	void TelescopeUI::set_vel_output(double v);
 
 	/*!
 	 * \brief Setter method for writing lines to internal UI console
