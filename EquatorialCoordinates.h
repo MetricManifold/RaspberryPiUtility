@@ -9,7 +9,8 @@
 #pragma once
 
 #include "Angle.h"
-#include "HorizontalCoordinates.h"
+
+class HorizontalCoordinates;
 
 class EquatorialCoordinates
 {
@@ -56,7 +57,7 @@ public:
 	 * \param local_sidereal_time represents the current local sidereal time as an Angle
 	 * \return the same celestial coordinates, represented in the horizontal system
 	 */
-	//HorizontalCoordinates get_horizontal(Angle latitude, Angle longitude, Angle local_sidereal_time);
+	HorizontalCoordinates get_horizontal(Angle latitude, Angle longitude, Angle local_sidereal_time);
 
 private:
 	Angle _right_ascension;   ///< internal representation of the right ascension

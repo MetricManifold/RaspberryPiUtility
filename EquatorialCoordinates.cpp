@@ -8,6 +8,7 @@
  */
 
 #include "EquatorialCoordinates.h"
+#include "HorizontalCoordinates.h"
 
 #include <math.h>
 
@@ -70,7 +71,6 @@ void EquatorialCoordinates::set_declination(Angle declination)
  * \param local_sidereal_time represents the current local sidereal time as an Angle
  * \return the same celestial coordinates, represented in the horizontal system
  */
-/*
 HorizontalCoordinates EquatorialCoordinates::get_horizontal(Angle latitude, Angle longitude, Angle local_sidereal_time)
 {
 	//for convenience, let's use radians
@@ -89,4 +89,3 @@ HorizontalCoordinates EquatorialCoordinates::get_horizontal(Angle latitude, Angl
 
 	return HorizontalCoordinates(Angle(altitude), Angle(azimuth));
 }
-*/
