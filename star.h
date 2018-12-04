@@ -37,15 +37,15 @@ public:
 	Star(char *name);
 	~Star();
 
-	Angle get_rightasc()
-	{
-		return Angle(rasc.h);
-	}
+	/*
+	 * get the right ascension as a standardized angle
+	 */
+	Angle get_rightasc();
 
-	Angle get_declination()
-	{
-		return Angle(dec.d);
-	}
+	/*
+	 * get the declination as a standardized angel
+	 */
+	Angle get_declination();
 
 private:
 

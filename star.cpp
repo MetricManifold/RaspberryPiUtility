@@ -56,8 +56,18 @@ Star::~Star()
 	delete[] url;
 }
 
+Angle Star::get_rightasc()
+{
+	return Angle((rasc.h / 24.0) * 360, rasc.m, rasc.s);
+}
+
+Angle Star::get_declination()
+{
+	return Angle(dec.d, dec.m, dec.s);
+}
+
 
 void Star::print_info(FILE *f)
 {
-	fprintf(f, STAR_FMT, rasc.h, rasc.m, rasc.s, dec.d, dec.am, dec.as);
+	fprintf(f, STAR_FMT, rasc.h, rasc.m, rasc.s, dec.d, dec.m, dec.s);
 }

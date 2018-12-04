@@ -69,3 +69,7 @@ public:
  private:
 	 double _angle_radians; ///< internal representation of the angle
 };
+
+
+
+

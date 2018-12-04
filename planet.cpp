@@ -528,5 +528,5 @@ std::pair<Angle, Angle> Planet::get_equatorial_angle()
 	delta = delta * 180.0 / (atan(1) * 4);
 
 	return { alpha, delta };
-
+}
 

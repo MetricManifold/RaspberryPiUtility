@@ -79,6 +79,7 @@ public:
 	/*
 	 * perform a calculation using the orbital parameters to return the right ascension
 	 * and declination in terms of orbital coordinates
+	 * always returns ra/d in terms of the current time
 	 *
 	 * source
 	 * https://www.hackster.io/30506/calculation-of-right-ascension-and-declination-402218
