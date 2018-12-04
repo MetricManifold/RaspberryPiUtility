@@ -6,7 +6,7 @@
 
 #include "telescopeui.h"
 #include "backendwrapper.h"
-#include "planetrad.h"
+#include "planet.h"
 
 #include <QtWidgets/QApplication>
 #include <iostream>
