@@ -14,7 +14,7 @@
 #include <functional>
 
 #include <QEventLoop>
-#include <Qtimer>
+#include <QTimer>
 #include <QObject>
 #include <QByteArray>
 #include <QNetworkAccessManager>
