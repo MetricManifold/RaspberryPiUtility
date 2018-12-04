@@ -138,5 +138,9 @@ bool SerialPort::write(char *buffer, unsigned int buf_size)
 
 bool SerialPort::has_con() const
 {
+#ifdef DEBUG
+	return true;
+#else
 	return connected;
+#endif
 }

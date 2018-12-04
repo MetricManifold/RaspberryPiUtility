@@ -318,8 +318,8 @@ Planet::Planet(char *name) :
 		e == -1 ||
 		a == -1)
 	{
-		printf("At least one of the parameters for planet '%s' was \
-				not found on wikipedia\n", name);
+		printf("At least one of the parameters for planet '%s' was"
+				" not found on wikipedia\n", name);
 		state = false;
 	}
 	else

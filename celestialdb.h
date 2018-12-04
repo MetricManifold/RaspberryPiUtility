@@ -13,6 +13,8 @@
 #include "star.h"
 #include "planet.h"
 #include "celestialout.h"
+#include "control.h"
+#include "controlout.h"
 
 struct CelestialDB
 {
@@ -47,7 +49,9 @@ public:
 	 * Given the right ascension and declination, it will
 	 * output the corresponding degree measure to the user
 	 */
-	void output_coords(char *name, Angle rightasc, Angle declination);
+	void output_body_details(char *name, Angle rightasc, Angle declination);
+
+	void output_coords(Angle altitude, Angle azimuth);
 
 	bool turn_to_coordinates(Angle altitude, Angle azimuth);
 };

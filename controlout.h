@@ -23,6 +23,8 @@ public:
 
 	void update()
 	{
+		printf("-- CONTROL OUTPUT ---------------------------\n");
+
 		auto[yaw, pitch] = vs;
 		printf("yaw/pitch output, '%lf/%lf'\n", yaw, pitch);
 

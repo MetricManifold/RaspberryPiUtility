@@ -77,7 +77,7 @@ public:
 	 * let the motor driver function, which returns the state, easily access
 	 * members from this class
 	 */
-	friend static MotorControl &motor_driver();
+	friend MotorControl &motor_driver();
 
 private:
 

@@ -2,28 +2,36 @@
 #include "coordencoder.h"
 
 
-void ce::coords_to_char(double yaw, double pitch, char * data)
+void ce::coords_to_char(double yaw, double pitch, char data[MSG_LENGTH])
 {
-	int data_i = coords_to_int(yaw, pitch);
-	for (int i = 0; i < MSG_LENGTH; ++i)
+	uint64_t data_i = coords_to_int(yaw, pitch);
+
+	char out[BIT_LENGTH + 1]{ 0 };
+	print_as_bits(data_i, out);
+
+
+	int i = 0;
+	for (unsigned char *c = reinterpret_cast<unsigned char *>(&data_i); c < reinterpret_cast<unsigned char *>(&data_i) + MSG_LENGTH; ++c)
 	{
-		data[i] = static_cast<char>(data_i >> (i * 8));
+		data[i++] = *c;
 	}
 }
 
-unsigned int ce::coords_to_int(double yaw, double pitch)
+uint64_t ce::coords_to_int(double yaw, double pitch)
 {
-	return 
-		static_cast<int>(pitch * NORMALIZATION_FACTOR) 
-		| (static_cast<int>(yaw * NORMALIZATION_FACTOR) << MSG_PITCH_POS);
+	uint64_t data = static_cast<uint64_t>(pitch * NORMALIZATION_FACTOR)
+		| (static_cast<uint64_t>(yaw * NORMALIZATION_FACTOR) << MSG_PITCH_POS);
+	return data;
 }
 
-unsigned int ce::char_to_int(char data[MSG_LENGTH])
+uint64_t ce::char_to_int(char data[MSG_LENGTH])
 {
-	int data_i = 0;
-	for (int i = 0; i < MSG_LENGTH; ++i)
+	uint64_t data_i = 0;
+
+	int i = 0;
+	for (unsigned char *c = reinterpret_cast<unsigned char *>(&data_i); c < reinterpret_cast<unsigned char *>(&data_i) + MSG_LENGTH; ++c)
 	{
-		data_i += (static_cast<int>(data[i]) << (8 * i));
+		*c = data[i++];
 	}
 	return data_i;
 }
@@ -35,12 +43,12 @@ std::pair<double, double> ce::bytes_to_coords(char data[MSG_LENGTH])
 }
 
 
-std::pair<double, double> ce::bytes_to_coords(unsigned int data)
+std::pair<double, double> ce::bytes_to_coords(uint64_t data)
 {
 	double yaw, pitch;
-	unsigned int 
-		yaw_i = ((1 << MSG_YAW_POS) - 1) << MSG_PITCH_POS, 
-		pitch_i = (1 << MSG_PITCH_POS) - 1;
+	uint64_t
+		yaw_i = ((1llu << MSG_YAW_POS) - 1llu) << MSG_PITCH_POS,
+		pitch_i = (1llu << MSG_PITCH_POS) - 1llu;
 
 	yaw = ((yaw_i & data) >> MSG_PITCH_POS) / NORMALIZATION_FACTOR;
 	pitch = (pitch_i & data) / NORMALIZATION_FACTOR;
@@ -48,13 +56,13 @@ std::pair<double, double> ce::bytes_to_coords(unsigned int data)
 	return { yaw, pitch };
 }
 
-void ce::print_as_bits(unsigned int data, char *out)
+void ce::print_as_bits(uint64_t data, char *out)
 {
 	char bits[BIT_LENGTH + 1];
-	for (char *c = bits; c < bits + 16 + 16; ++c)
+	for (char *c = bits; c < bits + BIT_LENGTH; ++c)
 	{
-		int i = (BIT_LENGTH - 1) - (c - bits);
-		if ((1 << i) & data)
+		unsigned i = (BIT_LENGTH - 1) - (c - bits);
+		if ((1llu << i) & data)
 		{
 			*c = '1';
 		}
@@ -67,7 +75,7 @@ void ce::print_as_bits(unsigned int data, char *out)
 	std::copy(bits, bits + BIT_LENGTH + 1, out);
 }
 
-void ce::print_as_bits(char * data, char *out)
+void ce::print_as_bits(char *data, char *out)
 {
 	print_as_bits(char_to_int(data), out);
 }

@@ -42,7 +42,7 @@ private:
 	double yaw, pitch;
 	FakeSerial() : yaw{ 0 }, pitch{ 0 } {}
 
-	friend static FakeSerial &get_test_serial();
+	friend FakeSerial &get_test_serial();
 };
 
 static FakeSerial &get_test_serial()

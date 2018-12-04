@@ -25,10 +25,10 @@ int FakeSerial::read(char *buffer, unsigned int buf_size)
 
 	ce::coords_to_char(yaw, pitch, buffer);
 
-	char data[BIT_LENGTH + 1];
-	ce::print_as_bits(buffer, data);
+	char output[BIT_LENGTH + 1];
+	ce::print_as_bits(buffer, output);
+	printf("SERIAL_OUT: %s, (%lf/%lf)\n", output, yaw, pitch);
 
-	printf("SERIAL_OUT: %s, (%lf/%lf)\n", data, yaw, pitch);
 	return true;
 }
 
@@ -41,10 +41,10 @@ int FakeSerial::read(char *buffer, unsigned int buf_size)
 bool FakeSerial::write(char *buffer, unsigned int buf_size)
 {
 	auto[yaw, pitch] = ce::bytes_to_coords(buffer);
-	char data[BIT_LENGTH + 1];
-
-	ce::print_as_bits(buffer, data);
-	printf("SERIAL_IN: %s, (%lf/%lf)\n", data, yaw, pitch);
+	
+	char output[BIT_LENGTH + 1];
+	ce::print_as_bits(buffer, output);
+	printf("SERIAL_IN: %s, (%lf/%lf)\n", output, yaw, pitch);
 
 	return true;
 }
