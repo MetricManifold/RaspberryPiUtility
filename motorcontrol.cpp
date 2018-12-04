@@ -179,6 +179,7 @@ bool MotorControl::write_vel(double yaw, double pitch)
 		return false;
 	}
 
+	return true;
 }
 
 void MotorControl::all_stop()

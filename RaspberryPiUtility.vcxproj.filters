@@ -64,6 +64,24 @@
     <Filter Include="Header Files\Test">
       <UniqueIdentifier>{0bf512f0-2b79-4d9b-aad6-d0a18bba64ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Back End\Celestial DB">
+      <UniqueIdentifier>{44b351f9-e969-414f-9dd9-e19ed1f5c87f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Bridge\Celestial DB Bridge">
+      <UniqueIdentifier>{4a78be0f-8288-4612-9e63-2635f37e4ac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Back End\Translation">
+      <UniqueIdentifier>{747552f5-acfa-48b1-afa7-5cfe6334bf51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Back End\Translation">
+      <UniqueIdentifier>{602a73a6-52cb-4471-911b-6696bf6b3c01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Bridge\Celestial DB Bridge">
+      <UniqueIdentifier>{7c6b180f-7c8a-4893-a4a4-bab976474bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Back End\Celestial DB">
+      <UniqueIdentifier>{cd48f740-4527-48ac-9cac-a77aa8956b21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -107,6 +125,33 @@
     </ClCompile>
     <ClCompile Include="telescopeui.cpp">
       <Filter>Source Files\Front End</Filter>
+    </ClCompile>
+    <ClCompile Include="HorizontalCoordinates.cpp">
+      <Filter>Source Files\Back End\Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="EquatorialCoordinates.cpp">
+      <Filter>Source Files\Back End\Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="Angle.cpp">
+      <Filter>Source Files\Back End\Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="celestialin.cpp">
+      <Filter>Source Files\Bridge\Celestial DB Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="celestialout.cpp">
+      <Filter>Source Files\Bridge\Celestial DB Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="downloadpage.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
+    </ClCompile>
+    <ClCompile Include="celestialdb.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
+    </ClCompile>
+    <ClCompile Include="star.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
+    </ClCompile>
+    <ClCompile Include="planet.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,10 +204,45 @@
     <ClInclude Include="translation.h">
       <Filter>Header Files\Back End</Filter>
     </ClInclude>
+    <ClInclude Include="downloadpage.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="celestialdb.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="star.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="planet.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="coordinates.h">
+      <Filter>Header Files\Back End\Celestial DB</Filter>
+    </ClInclude>
+    <ClInclude Include="celestialin.h">
+      <Filter>Header Files\Bridge\Celestial DB Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="celestialout.h">
+      <Filter>Header Files\Bridge\Celestial DB Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="EquatorialCoordinates.h">
+      <Filter>Header Files\Back End\Translation</Filter>
+    </ClInclude>
+    <ClInclude Include="HorizontalCoordinates.h">
+      <Filter>Header Files\Back End\Translation</Filter>
+    </ClInclude>
+    <ClInclude Include="Angle.h">
+      <Filter>Header Files\Back End\Translation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="telescopeui.h">
       <Filter>Header Files\Front End</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Osculating_Elements_2013.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

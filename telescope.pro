@@ -3,6 +3,7 @@
 ######################################################################
 
 QT += widgets
+QT += network
 
 TEMPLATE = app
 TARGET = telescope

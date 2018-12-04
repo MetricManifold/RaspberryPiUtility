@@ -2,7 +2,7 @@
 
 
 /*!
- *    \namespace tmc
+ *    \class tmc
  *    \file control.h
  *    \brief the API for the Telescope Motor Control
  *			there is no function to read the current coordinates as the design

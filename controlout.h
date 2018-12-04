@@ -1,3 +1,13 @@
+/*!
+ * \class ControlOut
+ * \file controlout
+ * \brief Bridge between motor control and UI
+ * \authors Steve Silber
+ * \date 2018-11
+ */
+
+
+
 #pragma once
 
 #include "bridgeout.h"
