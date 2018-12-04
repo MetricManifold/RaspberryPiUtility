@@ -31,26 +31,23 @@ private:
 
 public:
 
-	bool find_planet(char *name)
-	{
-		Planet p(name);
+	/*
+	 * given the name of the planet, it creates the temporary object
+	 * in order to read from online, and outputs the coordinates to user
+	 */
+	bool find_planet(char *name);
 
-		auto[rightasc, declination] = p.get_equatorial_angle();
-		output_coords(name, rightasc, declination);
+	/*
+	 * given the name of the star, it creates the temporary object
+	 * in order to read from online, and outputs the coordinates to user
+	 */
+	bool find_star(char *name);
 
-		return true;
-	}
+	/*
+	 * Given the right ascension and declination, it will
+	 * output the corresponding degree measure to the user
+	 */
+	void output_coords(char *name, Angle rightasc, Angle declination);
 
-	bool find_star(char *name)
-	{
-		Star s(name);
-		output_coords(name, s.get_rightasc(), s.get_declination());
-
-		return true;
-	}
-
-	void output_coords(char *name, Angle rightasc, Angle declination)
-	{
-		CelestialOut(name, rightasc, declination).update();
-	}
+	bool turn_to_coordinates(Angle altitude, Angle azimuth);
 };
