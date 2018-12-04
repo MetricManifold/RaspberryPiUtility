@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
 	Planet s("Mars");
 
-	auto[ra, d] = get_planet_rad(Mars);
+	auto[ra, d] = Mars.get_equatorial_angle();
 #endif
 	
 

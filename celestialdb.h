@@ -35,7 +35,7 @@ public:
 	{
 		Planet p(name);
 
-		auto[rightasc, declination] = get_planet_rad(p);
+		auto[rightasc, declination] = p.get_equatorial_angle();
 		output_coords(name, rightasc, declination);
 
 		return true;

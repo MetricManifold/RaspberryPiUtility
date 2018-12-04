@@ -21,7 +21,7 @@ typedef struct
 typedef struct
 {
 	int d;
-	int am;
-	double as;
+	int m;
+	double s;
 } declination;
 

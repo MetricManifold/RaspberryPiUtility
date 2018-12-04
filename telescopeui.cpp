@@ -28,7 +28,7 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 	ControlIn::init(b);
 	ControlOut::init(this);
 
-	//CelestialIn::init(b);
+	CelestialIn::init(b);
 	CelestialOut::init(this);
 
 	
