@@ -58,12 +58,12 @@ public:
 			altitude.get_radians(), azimuth.get_radians(),
 			// altitude arctime arguments
 			altitude.get_degrees_arcminutes_arcseconds()["degrees"], 
-			altitude.get_degrees_arcminutes_arcseconds()["minutes"], 
-			altitude.get_degrees_arcminutes_arcseconds()["seconds"],
+			altitude.get_degrees_arcminutes_arcseconds()["arcminutes"], 
+			altitude.get_degrees_arcminutes_arcseconds()["arcseconds"],
 			// azimuth arctime arguments
 			azimuth.get_degrees_arcminutes_arcseconds()["degrees"],
-			azimuth.get_degrees_arcminutes_arcseconds()["minutes"],
-			azimuth.get_degrees_arcminutes_arcseconds()["seconds"]);
+			azimuth.get_degrees_arcminutes_arcseconds()["arcminutes"],
+			azimuth.get_degrees_arcminutes_arcseconds()["arcseconds"]);
 
 #endif
 

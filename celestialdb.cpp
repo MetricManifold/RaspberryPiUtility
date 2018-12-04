@@ -48,12 +48,12 @@ bool CelestialDB::turn_to_coordinates(Angle altitude, Angle azimuth)
 		altitude_new.get_radians(), azimuth_new.get_radians(),
 		// altitude arctime arguments
 		altitude_new.get_degrees_arcminutes_arcseconds()["degrees"],
-		altitude_new.get_degrees_arcminutes_arcseconds()["minutes"],
-		altitude_new.get_degrees_arcminutes_arcseconds()["seconds"],
+		altitude_new.get_degrees_arcminutes_arcseconds()["arcminutes"],
+		altitude_new.get_degrees_arcminutes_arcseconds()["arcseconds"],
 		// azimuth arctime arguments
 		azimuth_new.get_degrees_arcminutes_arcseconds()["degrees"],
-		azimuth_new.get_degrees_arcminutes_arcseconds()["minutes"],
-		azimuth_new.get_degrees_arcminutes_arcseconds()["seconds"]);
+		azimuth_new.get_degrees_arcminutes_arcseconds()["arcminutes"],
+		azimuth_new.get_degrees_arcminutes_arcseconds()["arcseconds"]);
 
 #endif
 
