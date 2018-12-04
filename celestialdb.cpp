@@ -23,5 +23,5 @@ void CelestialDB::output_coords(char *name, Angle rightasc, Angle declination)
 
 bool CelestialDB::turn_to_coordinates(Angle altitude, Angle azimuth)
 {
-
+	return true;
 }
