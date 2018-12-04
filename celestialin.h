@@ -36,7 +36,14 @@ public:
 	 */
 	void slot()
 	{
+#ifdef _WIN64
 		auto[t, star_name, planet_name] = vs;
+#else
+                auto t = std::get<0>(vs);
+                auto star_name = std::get<1>(vs);
+                auto planet_name = std::get<2>(vs);
+
+#endif
 		switch (t)
 		{
 		case object_type::PLANET:

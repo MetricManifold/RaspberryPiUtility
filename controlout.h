@@ -25,7 +25,12 @@ public:
 	{
 		printf("-- CONTROL OUTPUT ---------------------------\n");
 
+#ifdef _WIN64
 		auto[yaw, pitch] = vs;
+#else
+                double yaw = std::get<0>(vs);
+                double pitch = std::get<1>(vs);
+#endif
 		printf("yaw/pitch output, '%lf/%lf'\n", yaw, pitch);
 
 		w->set_yaw_output(yaw);

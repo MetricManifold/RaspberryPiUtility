@@ -25,7 +25,14 @@ public:
 
 	void update()
 	{
+#ifdef _WIN64
 		auto[name, ra, d] = vs;
+#else
+
+                char * name = std::get<0>(vs);
+                Angle ra = std::get<1>(vs);
+                Angle d = std::get<2>(vs);
+#endif
 		printf("RA/D output, '%lf/%lf'\n", ra.get_degrees(), d.get_degrees());
 
 		w->set_name_dis(name);

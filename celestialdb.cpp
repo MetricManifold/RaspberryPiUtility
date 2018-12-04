@@ -4,7 +4,13 @@ bool CelestialDB::find_planet(char *name)
 {
 	Planet p(name);
 
+#ifdef _WIN64 
 	auto[rightasc, declination] = p.get_equatorial_angle();
+#else
+        auto coords = p.get_equatorial_angle();
+        auto rightasc = std::get<0>(coords);
+        auto declination = std::get<1>(coords);
+#endif
 	output_body_details(name, rightasc, declination);
 	return true;
 }
@@ -30,7 +36,13 @@ bool CelestialDB::turn_to_coordinates(Angle altitude, Angle azimuth)
 {
 	tmc::to_coords(altitude.get_degrees(), azimuth.get_degrees());
 
+#ifdef _WIN64 
 	auto[yaw, pitch] = tmc::get_coords();
+#else
+        auto coords = tmc::get_coords();
+        double yaw = std::get<0>(coords);
+        double pitch = std::get<1>(coords);
+#endif
 
 	// convert raw user input into coordinates
 	Angle altitude_new(yaw / 180.0 * (atan(1) * 4));
