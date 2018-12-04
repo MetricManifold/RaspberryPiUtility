@@ -92,6 +92,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>\DDEBUG=1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +134,7 @@
     <ClCompile Include="controlout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="gpio.cpp" />
+    <ClCompile Include="planet.cpp" />
     <ClCompile Include="serialport.cpp" />
     <ClCompile Include="fakeserial.cpp" />
     <ClCompile Include="star.cpp" />
@@ -161,7 +163,6 @@
     <ClInclude Include="fakeserial.h" />
     <ClInclude Include="HorizontalCoordinates.h" />
     <ClInclude Include="planet.h" />
-    <ClInclude Include="planetrad.h" />
     <ClInclude Include="star.h" />
     <ClInclude Include="motorcontrol.h" />
     <ClInclude Include="controlin.h" />
@@ -171,6 +172,9 @@
     <ClInclude Include="serialport.h" />
     <ClInclude Include="translation.h" />
     <QtMoc Include="telescopeui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Osculating_Elements_2013.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

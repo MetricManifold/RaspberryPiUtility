@@ -42,7 +42,7 @@ public:
 		{
 		case object_type::PLANET:
 
-
+			CelestialDB::instance().find_planet((char *)name.c_str());
 			break;
 
 		case object_type::STAR:

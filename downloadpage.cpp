@@ -61,9 +61,9 @@ bool web::get_page(char *contents, char *hostname, char *url)
 	delete[] request;
 
 	// buffer the data into contents
-	char buffer[HTTP_BUFFER_SIZE];
+	char buffer[HTTP_BUFFER_MEDIUM];
 	size_t p = 0;
-	while (recv(soc, buffer, HTTP_BUFFER_SIZE, 0) > 0)
+	while (recv(soc, buffer, HTTP_BUFFER_MEDIUM, 0) > 0)
 	{
 		int i = 0;
 		while (buffer[i] >= 32 || buffer[i] == '\n' || buffer[i] == '\r')
@@ -142,24 +142,79 @@ bool web::get_page(char *contents, char *hostname, char *url)
  */
 bool web::get_page_qt(char *contents, char *url)
 {
-	QUrl qurl(url);
+	static QNetworkAccessManager manager;
+	static QNetworkReply *reply;
+
+	// submit the request and wait for the reply
+	char url_s[] = "https://";
+	char *full_url = new char[strlen(url) + strlen(url_s)];
+
+	// verify the url and store it as required object
+	if (!(
+		*url == 'h' &&
+		*(url + 1) == 't' &&
+		*(url + 2) == 't' &&
+		*(url + 3) == 'p' &&
+		*(url + 4) == 's'
+		))
+	{
+		std::strcpy(full_url, url_s);
+		std::strcat(full_url, url);
+	}
+	else
+	{
+		std::strcpy(full_url, url);
+	}
+
+	QUrl qurl(full_url);
 	if (!qurl.isValid())
 	{
 		printf("invalid URL");
 		return false;
 	}
 
-	// submit the request and wait for the reply
-	QNetworkRequest request(qurl);
-	QNetworkReply *reply = QNetworkAccessManager().get(request);
+	auto ssl_errors = [&](QNetworkReply * reply, const QList<QSslError> &errors)
+	{
+		QString errorString;
+		foreach(const QSslError &error, errors) {
+			if (!errorString.isEmpty())
+				errorString += '\n';
+			errorString += error.errorString();
+		}
+
+		reply->ignoreSslErrors(errors);
+	};
+
+	reply = manager.get(QNetworkRequest(qurl));
+
+	// wait for the web request to be complete with a timer
+	static QTimer timer;
+	timer.setSingleShot(true);
+
+	QEventLoop loop;
+	QObject::connect(&manager, &QNetworkAccessManager::sslErrors, ssl_errors);
+	QObject::connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+	QObject::connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+	timer.start(1000);
+
+	if (reply->error())
+	{
+		printf("error requesting webpage\n");
+		return false;
+	}
+
+	loop.exec();
 
 	// read in the data into a plain html to put into contents
-	char *msg_iter = reply->readAll().data();
+	QByteArray bytearray = reply->readAll();
 	size_t p = 0;
-	while (*(msg_iter++))
+	for (auto const& c : bytearray)
 	{
-		contents[p++] = *msg_iter;
+		contents[p++] = c;
 	}
 	contents[p] = '\0';
+	
+	reply->deleteLater();
 	return true;
 }
+

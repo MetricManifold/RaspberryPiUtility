@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 
 	printf("initialized program\n");
 
+#ifdef DEBUG
 	static Planet Mars{
 		1.8496,
 		49.668,
@@ -38,9 +39,13 @@ int main(int argc, char *argv[])
 		0.093346,
 		82.9625 };
 
+	Planet s("Mars");
+
 	auto[ra, d] = get_planet_rad(Mars);
+#endif
 	
 
 	w.show();
 	return a.exec();
+
 }

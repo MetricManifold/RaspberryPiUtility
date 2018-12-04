@@ -101,6 +101,7 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 
 	// Search for planet
 	connect(ui.btn_search_planet, &QPushButton::clicked, this, [&]() {
+		CelestialIn(object_type::PLANET, this).slot();
 
 	});
 

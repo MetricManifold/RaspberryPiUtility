@@ -150,6 +150,9 @@
     <ClCompile Include="star.cpp">
       <Filter>Source Files\Back End\Celestial DB</Filter>
     </ClCompile>
+    <ClCompile Include="planet.cpp">
+      <Filter>Source Files\Back End\Celestial DB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="raspberrypiutility.ui">
@@ -231,13 +234,15 @@
     <ClInclude Include="Angle.h">
       <Filter>Header Files\Back End\Translation</Filter>
     </ClInclude>
-    <ClInclude Include="planetrad.h">
-      <Filter>Header Files\Back End\Translation</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="telescopeui.h">
       <Filter>Header Files\Front End</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Osculating_Elements_2013.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

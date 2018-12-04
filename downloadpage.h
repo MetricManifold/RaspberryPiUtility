@@ -9,8 +9,12 @@
 #pragma once
 
 #include <string>
+#include <mutex>
+#include <thread>
+#include <functional>
 
-
+#include <QEventLoop>
+#include <Qtimer>
 #include <QObject>
 #include <QByteArray>
 #include <QNetworkAccessManager>
@@ -19,8 +23,9 @@
 
 #pragma comment(lib,"ws2_32.lib")
 
-#define HTTP_BUFFER_SIZE 1 << 10
-#define HTTP_BUFFER_CONTENT 1 << 16
+#define HTTP_BUFFER_MEDIUM 1 << 16
+#define HTTP_BUFFER_CONTENT 1 << 28
+#define SCAN_BUFFER 1 << 10
 
 namespace web
 {

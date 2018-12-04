@@ -16,7 +16,7 @@ Star::Star(char *name) :
 		}
 	}
 
-	char contents[HTTP_BUFFER_CONTENT];
+	char *contents = new char[HTTP_BUFFER_CONTENT];
 	bool r = web::get_page(contents, STAR_HOST_NAME, url);
 
 	if (!r)
@@ -47,6 +47,7 @@ Star::Star(char *name) :
 			break;
 		}
 	} while ((line = strtok(NULL, delim)) != NULL);
+	delete[] contents;
 }
 
 Star::~Star()
