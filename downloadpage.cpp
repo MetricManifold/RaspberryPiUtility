@@ -77,7 +77,7 @@ bool web::get_page(char *contents, char *hostname, char *url)
 	WSACleanup();
 
 	return true;
-//#else
+#else
 
 	int sfd;
 	if ((sfd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
@@ -158,12 +158,12 @@ bool web::get_page_qt(char *contents, char *url)
 		*(url + 4) == 's'
 		))
 	{
-		strcpy(full_url, url_s);
-		strcat(full_url, url);
+		std::strcpy(full_url, url_s);
+		std::strcat(full_url, url);
 	}
 	else
 	{
-		strcpy(full_url, url);
+		std::strcpy(full_url, url);
 	}
 
 	QUrl qurl(full_url);

@@ -116,7 +116,7 @@ private:
 
 };
 
-MotorControl &motor_driver()
+static MotorControl &motor_driver()
 {
 	return MotorControl::get_instance();
 }

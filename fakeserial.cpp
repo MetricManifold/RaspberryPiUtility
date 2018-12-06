@@ -17,11 +17,11 @@ int FakeSerial::read(char *buffer, unsigned int buf_size)
 	yaw += dis(gen);
 	pitch += dis(gen);
 
-	yaw = std::min(yaw, 360.);
-	yaw = std::max(yaw, 0.);
+	yaw = min(yaw, 360);
+	yaw = max(yaw, 0);
 
-	pitch = std::min(pitch, 360.);
-	pitch = std::max(pitch, 0.);
+	pitch = min(pitch, 360);
+	pitch = max(pitch, 0);
 
 	ce::coords_to_char(yaw, pitch, buffer);
 
@@ -40,15 +40,8 @@ int FakeSerial::read(char *buffer, unsigned int buf_size)
  */
 bool FakeSerial::write(char *buffer, unsigned int buf_size)
 {
-#ifdef _WIN64
 	auto[yaw, pitch] = ce::bytes_to_coords(buffer);
-#else
-        auto coords = ce::bytes_to_coords(buffer);
-        double yaw = std::get<0>(coords);
-        double pitch = std::get<1>(coords);
-#endif
 	
-
 	char output[BIT_LENGTH + 1];
 	ce::print_as_bits(buffer, output);
 	printf("SERIAL_IN: %s, (%lf/%lf)\n", output, yaw, pitch);

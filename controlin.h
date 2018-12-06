@@ -37,14 +37,7 @@ public:
 	void slot()
 	{
 		printf("-- CONTROL INPUT ---------------------------\n");
-
-#ifdef _WIN64
 		auto[yaw, pitch] = vs;
-#else
-                double yaw = std::get<0>(vs);
-                double pitch = std::get<1>(vs);
-#endif
-
 		printf("yaw/pitch input, '%lf/%lf'\n", yaw, pitch);
 
 		// convert raw user input into coordinates

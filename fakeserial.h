@@ -45,7 +45,7 @@ private:
 	friend FakeSerial &get_test_serial();
 };
 
-FakeSerial &get_test_serial()
+static FakeSerial &get_test_serial()
 {
 	static FakeSerial instance;
 	return instance;
