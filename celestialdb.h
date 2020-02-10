@@ -52,6 +52,8 @@ public:
 	void output_body_details(char *name, Angle rightasc, Angle declination);
 
 	void output_coords(Angle altitude, Angle azimuth);
+	void write_coordinate_data(Angle altitude, Angle azimuth);
 
 	bool turn_to_coordinates(Angle altitude, Angle azimuth);
+	bool turn_with_velocity(Angle altitude, Angle azimuth);
 };

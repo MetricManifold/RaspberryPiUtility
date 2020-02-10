@@ -11,6 +11,9 @@
 #include "telescopeui.h"
 #include "controlin.h"
 #include "controlout.h"
+
+#include "velocityin.h"
+#include "velocityout.h"
 #include "celestialin.h"
 #include "celestialout.h"
 
@@ -30,6 +33,9 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 
 	CelestialIn::init(b);
 	CelestialOut::init(this);
+
+	VelocityIn::init(b);
+	VelocityOut::init(this);
 
 	
 	// Upon selecting file->exit, terminate program
@@ -67,6 +73,8 @@ TelescopeUI::TelescopeUI(Backend * const b, QWidget *parent)
 
 	// Upon pushing 'Set' velocity button send velocity setting to control
 	connect(ui.btn_set_vel, &QPushButton::clicked, this, [&]() {
+
+		VelocityIn(this).slot();
 
 		double pitch_vel = this->get_pitch_vel_input();
 		double yaw_vel = this->get_yaw_vel_input();

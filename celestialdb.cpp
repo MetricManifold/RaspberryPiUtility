@@ -26,10 +26,8 @@ void CelestialDB::output_body_details(char *name, Angle rightasc, Angle declinat
 	CelestialOut(name, rightasc, declination).update();
 }
 
-bool CelestialDB::turn_to_coordinates(Angle altitude, Angle azimuth)
+void CelestialDB::write_coordinate_data(Angle altitude, Angle azimuth)
 {
-	tmc::to_coords(altitude.get_degrees(), azimuth.get_degrees());
-
 	auto[yaw, pitch] = tmc::get_coords();
 
 	// convert raw user input into coordinates
@@ -56,8 +54,24 @@ bool CelestialDB::turn_to_coordinates(Angle altitude, Angle azimuth)
 		azimuth_new.get_degrees_arcminutes_arcseconds()["arcseconds"]);
 
 #endif
-
 	output_coords(altitude_new, azimuth_new);
+
+}
+
+bool CelestialDB::turn_to_coordinates(Angle altitude, Angle azimuth)
+{
+	tmc::to_coords(altitude.get_degrees(), azimuth.get_degrees());
+	write_coordinate_data(altitude, azimuth);
+	
+	return true;
+}
+
+
+bool CelestialDB::turn_with_velocity(Angle altitude, Angle azimuth)
+{
+	tmc::to_coords(altitude.get_degrees(), azimuth.get_degrees());
+	write_coordinate_data(altitude, azimuth);
 
 	return true;
 }
+

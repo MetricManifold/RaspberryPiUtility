@@ -153,6 +153,12 @@
     <ClCompile Include="planet.cpp">
       <Filter>Source Files\Back End\Celestial DB</Filter>
     </ClCompile>
+    <ClCompile Include="velocityin.cpp">
+      <Filter>Source Files\Bridge\Control Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="velocityout.cpp">
+      <Filter>Source Files\Bridge\Control Bridge</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="raspberrypiutility.ui">
@@ -233,6 +239,12 @@
     </ClInclude>
     <ClInclude Include="Angle.h">
       <Filter>Header Files\Back End\Translation</Filter>
+    </ClInclude>
+    <ClInclude Include="velocityin.h">
+      <Filter>Header Files\Bridge\Control Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="velocityout.h">
+      <Filter>Header Files\Bridge\Control Bridge</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
